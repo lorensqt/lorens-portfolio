@@ -274,7 +274,11 @@ body[data-theme='light'] {
   grid-template-columns: 2fr 1fr;
   gap: 2rem;
   padding: 4rem 2rem;
-  background: linear-gradient(180deg, #0a192f 0%, #172a45 100%);
+  background: linear-gradient(180deg, var(--bg-color-light) 0%, var(--secondary-color-light) 100%);
+}
+
+body[data-theme='light'] .main-grid-container {
+  background: linear-gradient(180deg, var(--bg-color-light) 0%, var(--secondary-color-light) 100%);
 }
 
 .left-column {
@@ -300,6 +304,12 @@ body[data-theme='light'] {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.5s ease-out forwards;
+}
+
+body[data-theme='light'] .card-main {
+  background: var(--primary-color-light);
+  border: 1px solid var(--border-color-light);
+  color: var(--text-color-light);
 }
 
 .card-main:hover {
@@ -361,6 +371,10 @@ body[data-theme='light'] {
   border: 1px solid transparent; /* Initial transparent border */
 }
 
+body[data-theme='light'] #tech-stack li {
+  background-color: var(--secondary-color-light);
+}
+
 #tech-stack li::before {
   content: '';
   position: absolute;
@@ -385,6 +399,10 @@ body[data-theme='light'] {
   box-shadow: 0 0 10px rgba(229, 57, 53, 0.7); /* Red glow */
 }
 
+body[data-theme='light'] #tech-stack li:hover {
+  color: var(--text-color-light);
+}
+
 .right-column {
   display: flex;
   align-items: center;
@@ -397,6 +415,7 @@ body[data-theme='light'] {
 .white-space-content {
   z-index: 2;
   text-align: center;
+  margin-top: -13rem;
 }
 
 .initials-logo {
@@ -404,6 +423,35 @@ body[data-theme='light'] {
   font-weight: 700;
   color: rgba(255, 255, 255, 0.8);
   text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.initials-logo span {
+  display: inline-block;
+  opacity: 0;
+  animation: fallFromTop 0.5s ease-out forwards;
+}
+
+.initials-logo span:nth-child(1) { animation-delay: 0.1s; }
+.initials-logo span:nth-child(2) { animation-delay: 0.2s; }
+.initials-logo span:nth-child(3) { animation-delay: 0.3s; }
+.initials-logo span:nth-child(4) { animation-delay: 0.4s; }
+.initials-logo span:nth-child(5) { animation-delay: 0.5s; }
+.initials-logo span:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fallFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body[data-theme='light'] .initials-logo {
+  color: var(--text-color-light);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .professional-portrait {
@@ -415,6 +463,12 @@ body[data-theme='light'] {
   left: 0;
   opacity: 0.2;
   filter: grayscale(100%) contrast(120%);
+}
+
+
+body[data-theme='light'] .professional-portrait {
+  opacity: 0.5;
+  filter: grayscale(50%);
 }
 
 /* Bio Section (Sliding Card) */

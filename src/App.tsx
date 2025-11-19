@@ -84,7 +84,14 @@ function App() {
               alt="Professional Freelancer" 
               className="professional-portrait"
             />
-            <div className="initials-logo">LORENS</div>
+            <div className="initials-logo">
+              <span>L</span>
+              <span>O</span>
+              <span>R</span>
+              <span>E</span>
+              <span>N</span>
+              <span>S</span>
+            </div>
           </div>
         </div>
       </main>
