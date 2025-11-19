@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { FcShop, FcMoneyTransfer, FcPuzzle, FcGlobe, FcCalendar, FcBusinessman, FcBriefcase } from "react-icons/fc";
 import './App.css';
 
 function App() {
@@ -44,31 +45,58 @@ function App() {
         <div className="left-column">
           <div className="card-grid-main">
             <div className="card-main" id="about">
-              <h3>About Me</h3>
-              <p>A passionate developer with a knack for creating elegant and efficient solutions. I have 5+ years of experience in building and designing web applications.</p>
+              <div className="card-header">
+                <FcBusinessman className="card-icon" />
+                <h3>About Me</h3>
+              </div>
+              <p>
+                Hello! I'm <span className="highlight-text">John Laurence Castillo</span>. 
+                I am a passionate developer specializing in building dynamic web applications using <span className="highlight-text">Laravel</span>, <span className="highlight-text">React</span>, and <span className="highlight-text">Vue</span>. 
+                With a strong focus on testing using <span className="highlight-text">Pest</span>, I ensure every solution is elegant, efficient, and robust.
+              </p>
             </div>
             <div className="card-main" id="services">
-              <h3>Services</h3>
-              <ul>
-                <li>Web Development</li>
-                <li>UI/UX Design</li>
-                <li>Backend Development</li>
-              </ul>
+              <div className="card-header services-header">
+                <FcBriefcase className="card-icon" />
+                <h3>Services</h3>
+              </div>
+              <div className="services-grid">
+                <div className="service-item">
+                  <FcShop size={30} />
+                  <span>E-commerce</span>
+                </div>
+                <div className="service-item">
+                  <FcMoneyTransfer size={30} />
+                  <span>Sinking Fund</span>
+                </div>
+                <div className="service-item">
+                  <FcPuzzle size={30} />
+                  <span>Automations & Integrations</span>
+                </div>
+                <div className="service-item">
+                  <FcGlobe size={30} />
+                  <span>Public Websites</span>
+                </div>
+                <div className="service-item">
+                  <FcCalendar size={30} />
+                  <span>Reservations</span>
+                </div>
+              </div>
             </div>
             <div className="card-main full-width" id="tech-stack">
               <h3>Tech Stack</h3>
               <ul>
-                <li><i className="fab fa-react"></i> React</li>
-                <li><i className="fab fa-vuejs"></i> Vue</li>
-                <li><i className="fas fa-code"></i> TypeScript</li>
-                <li><i className="fab fa-css3-alt"></i> Tailwind CSS</li>
-                <li><i className="fab fa-node-js"></i> Node.js</li>
-                <li><i className="fab fa-laravel"></i> Laravel</li>
-                <li><i className="fas fa-database"></i> MySQL</li>
-                <li><i className="fab fa-git-alt"></i> Git & GitHub</li>
-                <li><i className="fab fa-docker"></i> Docker</li>
-                <li><i className="fas fa-bolt-lightning"></i> Vite</li>
-                <li><i className="fab fa-google"></i> Google Cloud Platform</li>
+                <li><i className="devicon-react-original colored"></i> React</li>
+                <li><i className="devicon-vuejs-plain colored"></i> Vue</li>
+                <li><i className="devicon-typescript-plain colored"></i> TypeScript</li>
+                <li><i className="devicon-tailwindcss-original colored"></i> Tailwind CSS</li>
+                <li><i className="devicon-nodejs-plain colored"></i> Node.js</li>
+                <li><i className="devicon-laravel-original colored"></i> Laravel</li>
+                <li><i className="devicon-mysql-plain colored"></i> MySQL</li>
+                <li><i className="devicon-git-plain colored"></i> Git & GitHub</li>
+                <li><i className="devicon-docker-plain colored"></i> Docker</li>
+                <li><i className="devicon-vitejs-plain colored"></i> Vite</li>
+                <li><i className="devicon-googlecloud-plain colored"></i> Google Cloud Platform</li>
               </ul>
             </div>
             <div className="card-main full-width" id="projects">
