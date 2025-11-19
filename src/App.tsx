@@ -195,15 +195,7 @@ function App() {
         <div className="right-column">
           <div className="profile-sticky-wrapper">
             <div className="profile-card-glass">
-              <div className="profile-image-container">
-                <img 
-                  src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=755&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-                  alt="John Laurence Castillo" 
-                  className="profile-avatar"
-                />
-              </div>
-              
-              <div className="profile-info">
+              <div className="profile-header">
                 <h2>John Laurence Castillo</h2>
                 <span className="profile-tagline">Full Stack Developer</span>
                 <div className="status-indicator-wrapper">
@@ -231,7 +223,7 @@ function App() {
               </div>
 
               <a href="/lorens_resume.pdf" download="lorens_resume.pdf" className="download-cv-btn">
-                <FcDownload size={20} />
+                <FcDownload size={24} />
                 <span>Download CV</span>
               </a>
             </div>
@@ -247,7 +239,7 @@ function App() {
       <aside className={`bio-section ${isBioVisible ? 'visible' : ''}`}>
         <img src="/nobgprofile.png" className="bio-image" alt="John Laurence Castillo" />
         <div className="bio-content">
-          <h3>Laurence Castillo</h3>
+          {/* <h3>Laurence Castillo</h3> */}
           <h4>Freelance Design & Development Expert</h4>
           <p>I create user-focused web and mobile solutions that help businesses grow.</p>
         </div>

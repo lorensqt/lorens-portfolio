@@ -509,70 +509,90 @@ body[data-theme='light'] #tech-stack li:hover {
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: 2.5rem 2rem;
+  border-radius: 24px; /* Increased border radius */
+  padding: 3rem 2.5rem; /* Increased padding */
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 1.5rem;
+  gap: 2rem; /* Increased gap */
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add a subtle top gradient accent */
+.profile-card-glass::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
 }
 
 body[data-theme='light'] .profile-card-glass {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.8); /* More opaque for light mode */
   border: 1px solid rgba(255, 255, 255, 0.4);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
 }
 
 .profile-card-glass:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.3);
 }
 
-/* Profile Image Container */
-.profile-image-container {
-  position: relative;
+/* Profile Header */
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.profile-header h2 {
+  font-size: 2rem; /* Larger Name */
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+  color: var(--text-color);
+  line-height: 1.2;
+  background: linear-gradient(45deg, var(--text-color), var(--text-color-light)); /* Subtle text gradient */
+  -webkit-background-clip: text;
+  /* -webkit-text-fill-color: transparent; Remove for now for better contrast consistency */
+}
+
+.profile-tagline {
+  font-size: 1rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   margin-bottom: 1rem;
-}
-
-.profile-avatar {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.profile-card-glass:hover .profile-avatar {
-  transform: scale(1.05);
-  border-color: var(--accent-color);
 }
 
 /* Status Indicator (New Style) */
 .status-indicator-wrapper {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  margin-top: 0.8rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 0.6rem;
+  background: rgba(76, 175, 80, 0.1); /* Green tint background */
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  border: 1px solid rgba(76, 175, 80, 0.2);
   transition: all 0.3s ease;
 }
 
 .status-indicator-wrapper:hover {
-  background: rgba(76, 175, 80, 0.15);
+  background: rgba(76, 175, 80, 0.2);
   border-color: #4caf50;
+  transform: scale(1.02);
 }
 
 body[data-theme='light'] .status-indicator-wrapper {
-  background: rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(76, 175, 80, 0.08);
+  border: 1px solid rgba(76, 175, 80, 0.15);
 }
 
 .status-dot {
@@ -581,7 +601,7 @@ body[data-theme='light'] .status-indicator-wrapper {
   background-color: #4caf50; /* Green */
   border-radius: 50%;
   display: inline-block;
-  box-shadow: 0 0 5px #4caf50;
+  box-shadow: 0 0 8px #4caf50;
   animation: pulse-green 2s infinite;
 }
 
@@ -601,51 +621,32 @@ body[data-theme='light'] .status-indicator-wrapper {
 }
 
 .status-text {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text-color);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #4caf50; /* Green text matches dot */
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
-/* Profile Info */
-.profile-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.profile-info h2 {
-  font-size: 1.6rem;
-  font-weight: 700;
-  margin: 0;
-  margin-bottom: 0.25rem;
-  color: var(--text-color);
-}
-
-.profile-tagline {
-  font-size: 0.95rem;
-  color: var(--accent-color);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
+/* Profile Info removed as merged into header */
 
 /* Stats Section */
 .profile-stats {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
+  justify-content: space-around; /* Better spacing */
+  gap: 0;
   width: 100%;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 0.5rem;
+  background: rgba(255, 255, 255, 0.02); /* Subtle background for stats */
+  border-radius: 12px;
 }
 
 body[data-theme='light'] .profile-stats {
-  border-color: rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.02);
 }
 
 .stat-item {
@@ -655,111 +656,134 @@ body[data-theme='light'] .profile-stats {
 }
 
 .stat-value {
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: 1.8rem; /* Larger stats */
+  font-weight: 800;
   color: var(--text-color);
+  line-height: 1;
 }
 
 .stat-label {
-  font-size: 0.8rem;
-  opacity: 0.7;
-  margin-top: 0.2rem;
+  font-size: 0.85rem;
+  opacity: 0.6;
+  margin-top: 0.4rem;
+  font-weight: 500;
 }
 
 .stat-divider {
   width: 1px;
-  height: 30px;
-  background-color: rgba(255, 255, 255, 0.2);
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 body[data-theme='light'] .stat-divider {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 /* Social Links inside Profile Card */
 .profile-card-glass .social-links {
   display: flex;
-  gap: 1.2rem;
-  margin: 0.5rem 0 1rem 0;
+  gap: 1.5rem;
+  margin: 0.5rem 0;
   justify-content: center;
 }
 
 .profile-card-glass .social-links a {
   color: var(--text-color);
-  font-size: 1.2rem;
-  background: rgba(255, 255, 255, 0.1);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  font-size: 1.4rem; /* Larger icons */
+  background: rgba(255, 255, 255, 0.05);
+  width: 50px; /* Larger buttons */
+  height: 50px;
+  border-radius: 50%; /* Circle */
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
-  border: 1px solid transparent;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 body[data-theme='light'] .profile-card-glass .social-links a {
   background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.05);
 }
 
 /* Individual Social Button Colors on Hover */
 .profile-card-glass .social-links .social-btn:hover {
-  color: white !important; /* Keep icon white */
-  transform: translateY(-3px);
+  color: white !important; 
+  transform: translateY(-5px) scale(1.1);
   border-color: transparent;
 }
 
 .profile-card-glass .social-links .social-btn.facebook:hover {
-  background-color: #1877F2; /* Facebook Blue */
-  box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
+  background-color: #1877F2;
+  box-shadow: 0 8px 20px rgba(24, 119, 242, 0.4);
 }
 
 .profile-card-glass .social-links .social-btn.messenger:hover {
-  background: linear-gradient(45deg, #00B2FF, #006AFF); /* Messenger Gradient */
-  box-shadow: 0 5px 15px rgba(0, 106, 255, 0.4);
+  background: linear-gradient(45deg, #00B2FF, #006AFF);
+  box-shadow: 0 8px 20px rgba(0, 106, 255, 0.4);
 }
 
 .profile-card-glass .social-links .social-btn.gmail:hover {
-  background-color: #DB4437; /* Gmail Red */
-  box-shadow: 0 5px 15px rgba(219, 68, 55, 0.4);
+  background-color: #DB4437;
+  box-shadow: 0 8px 20px rgba(219, 68, 55, 0.4);
 }
 
 /* Add a slight glow to the white icon on hover */
 .profile-card-glass .social-links .social-btn:hover svg {
-  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.8));
 }
 
-/* Download CV Button */
+/* Download CV Button - Enhanced */
 .download-cv-btn {
   width: 100%;
-  padding: 0.9rem;
-  border-radius: 12px;
+  padding: 1.2rem;
+  border-radius: 16px;
   border: none;
-  background: linear-gradient(45deg, var(--accent-color), #ff7171);
+  background: linear-gradient(135deg, var(--accent-color), #ff7171);
   color: #fff;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 700;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
-  transition: all 0.3s ease;
+  gap: 0.8rem;
+  transition: all 0.4s ease;
   box-shadow: 0 4px 15px rgba(229, 57, 53, 0.3);
-  text-decoration: none; /* Ensure no underline for anchor tag */
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shine effect */
+.download-cv-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+  transform: rotate(30deg) translateX(-150%);
+  transition: transform 0.6s ease-in-out;
+}
+
+.download-cv-btn:hover::after {
+  transform: rotate(30deg) translateX(150%);
 }
 
 .download-cv-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(229, 57, 53, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(229, 57, 53, 0.5);
 }
 
 .download-cv-btn svg {
-  transition: transform 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2));
 }
 
 .download-cv-btn:hover svg {
-  transform: translateY(3px); /* Downward animation for download icon */
+  transform: translateY(3px) scale(1.2);
 }
 
 /* Bio Section (Sliding Card) */
