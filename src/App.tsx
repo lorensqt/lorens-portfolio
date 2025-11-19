@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import { FcShop, FcMoneyTransfer, FcPuzzle, FcGlobe, FcCalendar, FcBusinessman, FcBriefcase, FcLike, FcCommandLine, FcApproval, FcSettings, FcCollaboration } from "react-icons/fc";
+import { FcShop, FcMoneyTransfer, FcPuzzle, FcGlobe, FcCalendar, FcBusinessman, FcBriefcase, FcLike, FcCommandLine, FcApproval, FcSettings, FcCollaboration, FcDownload, FcOk } from "react-icons/fc";
+import { FaFacebookF, FaFacebookMessenger } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
 import './App.css';
 
 function App() {
@@ -56,7 +58,7 @@ function App() {
               </div>
               <div className="about-body">
                 <p className="about-intro">
-                  Hi, I'm <span className="name-highlight">John Laurence Castillo</span>.
+                  Hi, I'm <span className="name-highlight">LORENS</span>.
                 </p>
                 <p className="about-description">
                   I build dynamic web applications with a focus on quality and performance.
@@ -191,19 +193,47 @@ function App() {
           </div>
         </div>
         <div className="right-column">
-          <div className="white-space-content">
-            <img 
-              src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=755&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-              alt="Professional Freelancer" 
-              className="professional-portrait"
-            />
-            <div className="initials-logo">
-              <span>L</span>
-              <span>O</span>
-              <span>R</span>
-              <span>E</span>
-              <span>N</span>
-              <span>S</span>
+          <div className="profile-sticky-wrapper">
+            <div className="profile-card-glass">
+              <div className="profile-image-container">
+                <img 
+                  src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=755&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                  alt="John Laurence Castillo" 
+                  className="profile-avatar"
+                />
+              </div>
+              
+              <div className="profile-info">
+                <h2>John Laurence Castillo</h2>
+                <span className="profile-tagline">Full Stack Developer</span>
+                <div className="status-indicator-wrapper">
+                   <span className="status-dot pulse"></span>
+                   <span className="status-text">Freelance Only</span>
+                </div>
+              </div>
+
+              <div className="profile-stats">
+                <div className="stat-item">
+                  <span className="stat-value">5+</span>
+                  <span className="stat-label">Years Exp.</span>
+                </div>
+                <div className="stat-divider"></div>
+                <div className="stat-item">
+                  <span className="stat-value">30+</span>
+                  <span className="stat-label">Projects</span>
+                </div>
+              </div>
+
+              <div className="social-links">
+                <a href="#" aria-label="Facebook" className="social-btn facebook"><FaFacebookF /></a>
+                <a href="#" aria-label="Messenger" className="social-btn messenger"><FaFacebookMessenger /></a>
+                <a href="#" aria-label="Gmail" className="social-btn gmail"><SiGmail /></a>
+              </div>
+
+              <a href="/lorens_resume.pdf" download="lorens_resume.pdf" className="download-cv-btn">
+                <FcDownload size={20} />
+                <span>Download CV</span>
+              </a>
             </div>
           </div>
         </div>
@@ -220,17 +250,17 @@ function App() {
           <h3>Laurence Castillo</h3>
           <h4>Freelance Design & Development Expert</h4>
           <p>I create user-focused web and mobile solutions that help businesses grow.</p>
-          <div className="social-links">
-            <a href="#" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Messenger"><i className="fab fa-facebook-messenger"></i></a>
-            <a href="#" aria-label="Gmail"><i className="fas fa-envelope"></i></a>
-          </div>
         </div>
       </aside>
 
-      <footer id="contact" className="footer">
-        <p>© 2025 John Laurence Castillo. All Rights Reserved.</p>
-        <p>Contact me at: [your-email@example.com]</p>
+      <footer id="contact" className="footer-glass">
+        <div className="footer-content">
+          <div className="footer-brand">
+            <h4>LORENS</h4>
+            <p>© 2025 John Laurence Castillo</p>
+            <p className="footer-tagline">Building digital experiences.</p>
+          </div>
+        </div>
       </footer>
     </div>
   );
