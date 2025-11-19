@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FcShop, FcMoneyTransfer, FcPuzzle, FcGlobe, FcCalendar, FcBusinessman, FcBriefcase } from "react-icons/fc";
+import { FcShop, FcMoneyTransfer, FcPuzzle, FcGlobe, FcCalendar, FcBusinessman, FcBriefcase, FcLike, FcCommandLine, FcApproval, FcSettings, FcCollaboration } from "react-icons/fc";
 import './App.css';
 
 function App() {
@@ -44,64 +44,149 @@ function App() {
       <main id="main-content" className="main-grid-container">
         <div className="left-column">
           <div className="card-grid-main">
-            <div className="card-main" id="about">
-              <div className="card-header">
-                <FcBusinessman className="card-icon" />
-                <h3>About Me</h3>
+            <div className="card-main about-card" id="about">
+              <div className="about-header-section">
+                <div className="about-icon-wrapper">
+                  <FcBusinessman className="about-main-icon" />
+                </div>
+                <div className="about-title-wrapper">
+                  <h3>About Me</h3>
+                  <span className="about-role">Full Stack Developer</span>
+                </div>
               </div>
-              <p>
-                Hello! I'm <span className="highlight-text">John Laurence Castillo</span>. 
-                I am a passionate developer specializing in building dynamic web applications using <span className="highlight-text">Laravel</span>, <span className="highlight-text">React</span>, and <span className="highlight-text">Vue</span>. 
-                With a strong focus on testing using <span className="highlight-text">Pest</span>, I ensure every solution is elegant, efficient, and robust.
-              </p>
+              <div className="about-body">
+                <p className="about-intro">
+                  Hi, I'm <span className="name-highlight">John Laurence Castillo</span>.
+                </p>
+                <p className="about-description">
+                  I build dynamic web applications with a focus on quality and performance.
+                </p>
+                <div className="about-skills-container">
+                  <span className="skill-pill pill-laravel">Laravel</span>
+                  <span className="skill-pill pill-react">React</span>
+                  <span className="skill-pill pill-vue">Vue</span>
+                  <span className="skill-pill pill-pest">Pest</span>
+                </div>
+                <p className="about-philosophy">
+                  Ensuring every solution is elegant, efficient, and robust.
+                </p>
+              </div>
             </div>
-            <div className="card-main" id="services">
-              <div className="card-header services-header">
-                <FcBriefcase className="card-icon" />
-                <h3>Services</h3>
+            <div className="card-main services-card" id="services">
+              <div className="services-header-section">
+                <div className="services-icon-wrapper">
+                   <FcBriefcase className="services-main-icon" />
+                </div>
+                <h3>What I Offer</h3>
               </div>
-              <div className="services-grid">
-                <div className="service-item">
-                  <FcShop size={30} />
+              <div className="services-modern-grid">
+                <div className="service-modern-item">
+                  <div className="icon-box"><FcShop size={40} /></div>
                   <span>E-commerce</span>
                 </div>
-                <div className="service-item">
-                  <FcMoneyTransfer size={30} />
+                <div className="service-modern-item">
+                  <div className="icon-box"><FcMoneyTransfer size={40} /></div>
                   <span>Sinking Fund</span>
                 </div>
-                <div className="service-item">
-                  <FcPuzzle size={30} />
-                  <span>Automations & Integrations</span>
+                <div className="service-modern-item">
+                  <div className="icon-box"><FcPuzzle size={40} /></div>
+                  <span>Automations</span>
                 </div>
-                <div className="service-item">
-                  <FcGlobe size={30} />
+                <div className="service-modern-item">
+                  <div className="icon-box"><FcGlobe size={40} /></div>
                   <span>Public Websites</span>
                 </div>
-                <div className="service-item">
-                  <FcCalendar size={30} />
+                <div className="service-modern-item">
+                  <div className="icon-box"><FcCalendar size={40} /></div>
                   <span>Reservations</span>
+                </div>
+                <div className="service-modern-item">
+                  <div className="icon-box"><FcLike size={40} /></div>
+                  <span>Wedding Websites</span>
                 </div>
               </div>
             </div>
-            <div className="card-main full-width" id="tech-stack">
-              <h3>Tech Stack</h3>
-              <ul>
-                <li><i className="devicon-react-original colored"></i> React</li>
-                <li><i className="devicon-vuejs-plain colored"></i> Vue</li>
-                <li><i className="devicon-typescript-plain colored"></i> TypeScript</li>
-                <li><i className="devicon-tailwindcss-original colored"></i> Tailwind CSS</li>
-                <li><i className="devicon-nodejs-plain colored"></i> Node.js</li>
-                <li><i className="devicon-laravel-original colored"></i> Laravel</li>
-                <li><i className="devicon-mysql-plain colored"></i> MySQL</li>
-                <li><i className="devicon-git-plain colored"></i> Git & GitHub</li>
-                <li><i className="devicon-docker-plain colored"></i> Docker</li>
-                <li><i className="devicon-vitejs-plain colored"></i> Vite</li>
-                <li><i className="devicon-googlecloud-plain colored"></i> Google Cloud Platform</li>
-              </ul>
+            <div className="card-main tech-stack-card full-width" id="tech-stack">
+              <div className="tech-header-section">
+                <div className="tech-icon-wrapper">
+                  <FcCommandLine className="tech-main-icon" />
+                </div>
+                <h3>Tech Stack</h3>
+              </div>
+              <div className="tech-grid">
+                <div className="tech-item">
+                  <i className="devicon-laravel-original colored"></i>
+                  <span>Laravel</span>
+                </div>
+                <div className="tech-item">
+                  <i className="devicon-react-original colored"></i>
+                  <span>React</span>
+                </div>
+                <div className="tech-item">
+                  <i className="devicon-vuejs-plain colored"></i>
+                  <span>Vue</span>
+                </div>
+                <div className="tech-item">
+                  <i className="devicon-typescript-plain colored"></i>
+                  <span>TypeScript</span>
+                </div>
+                <div className="tech-item">
+                  <i className="devicon-tailwindcss-original colored"></i>
+                  <span>Tailwind</span>
+                </div>
+                <div className="tech-item">
+                  <i className="devicon-nodejs-plain colored"></i>
+                  <span>Node.js</span>
+                </div>
+                <div className="tech-item">
+                  <i className="devicon-mysql-plain colored"></i>
+                  <span>MySQL</span>
+                </div>
+                <div className="tech-item">
+                  <i className="devicon-git-plain colored"></i>
+                  <span>Git</span>
+                </div>
+                <div className="tech-item">
+                  <i className="devicon-docker-plain colored"></i>
+                  <span>Docker</span>
+                </div>
+                <div className="tech-item">
+                  <i className="devicon-vitejs-plain colored"></i>
+                  <span>Vite</span>
+                </div>
+                <div className="tech-item">
+                  <i className="devicon-googlecloud-plain colored"></i>
+                  <span>GCP</span>
+                </div>
+              </div>
             </div>
-            <div className="card-main full-width" id="projects">
-              <h3>Projects</h3>
-              <p>Showcasing a variety of projects from e-commerce platforms to data visualization dashboards.</p>
+            <div className="card-main projects-card full-width" id="projects">
+              <div className="projects-header-section">
+                <div className="projects-icon-wrapper">
+                  <FcBriefcase className="projects-main-icon" />
+                </div>
+                <h3>Projects</h3>
+              </div>
+              <div className="projects-grid">
+                <div className="project-item">
+                  <FcApproval size={40} />
+                  <h4>E-commerce Platform</h4>
+                  <p>Developed a full-stack e-commerce solution with secure payment gateway integration and inventory management.</p>
+                  <a href="#" className="project-link">View Project</a>
+                </div>
+                <div className="project-item">
+                  <FcSettings size={40} />
+                  <h4>CRM System</h4>
+                  <p>Built a custom Customer Relationship Management system to streamline client interactions and sales processes.</p>
+                  <a href="#" className="project-link">View Project</a>
+                </div>
+                <div className="project-item">
+                  <FcCollaboration size={40} />
+                  <h4>Real-time Chat Application</h4>
+                  <p>Created a real-time chat application using WebSockets, supporting direct messages and group chats.</p>
+                  <a href="#" className="project-link">View Project</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
