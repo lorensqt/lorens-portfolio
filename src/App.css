@@ -244,6 +244,8 @@ body[data-theme='light'] {
   .profile-sticky-wrapper {
     position: static !important; 
     animation: none; /* Remove slide-in animation on mobile for simpler load */
+    z-index: 5 !important;
+    position: relative !important;
   }
   
   /* Bio Section adjustments for mobile */
@@ -2001,7 +2003,7 @@ body[data-theme='light'] .projects-icon-wrapper {
         text-align: center !important; /* Center text within the card */
         padding: 1.5rem !important;
         gap: 1rem !important;
-        border-radius: 16px !important;
+        border-radius: 30px !important;
         z-index: 5 !important; /* Ensure it stays on top */
         position: relative !important;
         overflow: visible !important;
