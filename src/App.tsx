@@ -212,24 +212,7 @@ function App() {
                 <h3>Projects</h3>
               </div>
               <div className="projects-grid">
-                <div className="project-item">
-                  <FcApproval size={40} />
-                  <h4>E-commerce Platform</h4>
-                  <p>Developed a full-stack e-commerce solution with secure payment gateway integration and inventory management.</p>
-                  <a href="#" className="project-link">View Project</a>
-                </div>
-                <div className="project-item">
-                  <FcSettings size={40} />
-                  <h4>CRM System</h4>
-                  <p>Built a custom Customer Relationship Management system to streamline client interactions and sales processes.</p>
-                  <a href="#" className="project-link">View Project</a>
-                </div>
-                <div className="project-item">
-                  <FcCollaboration size={40} />
-                  <h4>Real-time Chat Application</h4>
-                  <p>Created a real-time chat application using WebSockets, supporting direct messages and group chats.</p>
-                  <a href="#" className="project-link">View Project</a>
-                </div>
+                <p>Most of my projects were internal and private, so they are not accessible or available for public viewing at this time. I'd be happy to discuss them in detail during a private conversation!</p>
               </div>
             </div>
           </div>
@@ -292,8 +275,7 @@ function App() {
           <div className="footer-brand">
             <h4>LORENS</h4>
             <p>© 2025 John Laurence Castillo</p>
-            <p className="footer-tagline">Building digital experiences.</p>
-            <p className="footer-react-note">This page is made with React</p>
+            <p className="footer-tagline">Work smarter, not harder.</p>
           </div>
         </div>
       </footer>

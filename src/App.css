@@ -1853,39 +1853,46 @@ body[data-theme='light'] .tech-item:hover {
 .projects-card {
   position: relative;
   overflow: visible;
-  padding: 2.5rem;
-  border-radius: 20px;
+  padding: 3.5rem 2rem; /* Increased padding like profile card */
+  border-radius: 30px;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
   z-index: 1;
   background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Un-center header */
+  text-align: left; /* Un-center header */
+  gap: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .projects-card::before {
   content: "";
   position: absolute;
-  inset: -3px;
-  border-radius: 22px;
+  inset: -3px; /* Thickness of the border */
+  border-radius: 32px; /* Slightly larger than card */
   background: linear-gradient(45deg, 
-    #ff0099, /* Magenta */
-    #493240, /* Dark Violet */
-    #ff0099
+    var(--accent-color), 
+    #ff9a9e, 
+    #fad0c4, 
+    var(--accent-color)
   );
   background-size: 300% 300%;
   z-index: -2;
   animation: gradientBorder 8s ease infinite;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .projects-card::after {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 20px;
-  background: rgba(15, 23, 42, 0.85);
+  border-radius: 30px;
+  background: rgba(15, 23, 42, 0.85); /* Deep dark blue-ish grey */
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   z-index: -1;
-  box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.5); /* Inner depth */
 }
 
 body[data-theme='light'] .projects-card::after {
@@ -1894,20 +1901,22 @@ body[data-theme='light'] .projects-card::after {
 
 .projects-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(255, 0, 153, 0.3); /* Magenta glow */
+  box-shadow: 0 30px 60px rgba(var(--accent-color-rgb), 0.3); /* Glowy shadow */
 }
 
 .projects-header-section {
   display: flex;
   align-items: center;
+  justify-content: flex-start; /* Un-center header */
   gap: 1.2rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0; /* Removed margin as parent gap handles spacing */
   position: relative;
   z-index: 1;
+  width: 100%; /* Ensure it takes full width for left alignment */
 }
 
 .projects-icon-wrapper {
-  background: linear-gradient(45deg, #ff0099, #493240);
+  background: rgba(255, 255, 255, 0.05); /* Match profile card social links */
   padding: 1rem;
   border-radius: 50%;
   display: flex;
@@ -1920,8 +1929,8 @@ body[data-theme='light'] .projects-card::after {
 
 .projects-card:hover .projects-icon-wrapper {
   transform: scale(1.15) rotate(15deg);
-  border-color: #ff0099;
-  box-shadow: 0 8px 20px rgba(255, 0, 153, 0.4);
+  border-color: var(--accent-color); /* Use accent color for border on hover */
+  box-shadow: 0 8px 20px rgba(var(--accent-color-rgb), 0.4);
 }
 
 .projects-main-icon {
@@ -1929,109 +1938,42 @@ body[data-theme='light'] .projects-card::after {
   filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
 }
 
-  .projects-card h3 {
-        font-size: 1.2rem !important;
-    }
+.projects-card h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin: 0;
+  line-height: 1.2;
+  background: linear-gradient(135deg, var(--text-color) 30%, var(--accent-color) 100%); /* Match profile card h2 gradient */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 
 body[data-theme='light'] .projects-icon-wrapper {
-  background: linear-gradient(45deg, #ff9a9e, #fecfef);
-  border-color: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.05);
 }
 
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   z-index: 1;
 }
 
-.project-item {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 15px;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  text-align: left;
-  position: relative;
-  overflow: hidden;
-}
-
-body[data-theme='light'] .project-item {
-  background: rgba(0, 0, 0, 0.02);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.project-item:hover {
-  transform: translateY(-8px) scale(1.02);
-  background: rgba(255, 255, 255, 0.1);
-  border-color: #ff0099;
-  box-shadow: 0 12px 25px rgba(255, 0, 153, 0.2);
-}
-
-body[data-theme='light'] .project-item:hover {
-  background: white;
-}
-
-.project-item svg {
-  font-size: 3.5rem; /* Larger icon */
-  color: #ff0099; /* Magenta accent */
-  margin-bottom: 0.5rem;
-  transition: transform 0.3s ease;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
-}
-
-.project-item:hover svg {
-  transform: scale(1.1) rotate(-5deg);
-}
-
-.project-item h4 {
-  font-size: 1.4rem;
-  font-weight: 800;
-  margin: 0;
+.projects-grid p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-style: italic;
   color: var(--text-color);
+  opacity: 0.8;
+  max-width: 80%;
+  margin: 0;
 }
 
-.project-item p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  opacity: 0.85;
-  flex-grow: 1;
-}
-
-.project-link {
-  display: inline-block;
-  margin-top: 1rem;
-  color: #ff0099;
-  text-decoration: none;
-  font-weight: 700;
-  position: relative;
-  padding-bottom: 3px;
-  font-size: 0.95rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.project-link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #ff0099;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease-out;
-}
-
-.project-link:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
+/* Removed old project-item styles as they are no longer used */
 
     .download-cv-btn svg {
         font-size: 0.9rem !important;
@@ -2208,11 +2150,11 @@ body[data-theme='light'] .project-item:hover {
     }
 
     .values-main-icon {
-        font-size: 1.8rem !important;
+        font-size: 1.5rem !important;
     }
 
     .values-header-section h3 {
-        font-size: 1.4rem !important;
+        font-size: 1.2rem !important;
     }
 
     /* Tech Stack Mobile Adjustments */
@@ -2247,6 +2189,10 @@ body[data-theme='light'] .project-item:hover {
     }
 
     /* Projects Card Mobile Adjustments */
+    .projects-card {
+        padding: 1.5rem !important;
+    }
+
     .projects-card h3 {
         font-size: 1.2rem !important;
     }
@@ -2256,25 +2202,24 @@ body[data-theme='light'] .project-item:hover {
     }
 
     .projects-grid {
-        grid-template-columns: 1fr !important; /* Force 1 column for projects on mobile */
-        gap: 1rem !important; /* Adjusted gap */
+        /* grid-template-columns: 1fr !important;  Removed as we are not using grid anymore for projects text */
+        /* gap: 1rem !important; */
+        flex-direction: column !important;
     }
 
-    .project-item {
-        padding: 1.2rem !important; /* Reduced padding */
-    }
-
-    .project-item svg {
-        font-size: 2.5rem !important; /* Smaller icon size */
-    }
-
-    .project-item h4 {
-        font-size: 1rem !important;
-    }
-
-    .project-item p {
-        font-size: 0.8rem !important;
+    .projects-grid p {
+        font-size: 0.9rem !important;
         line-height: 1.4 !important;
+        max-width: 100% !important;
+    }
+
+    /* Bio Toggle Mobile Adjustments */
+    .bio-toggle {
+        width: 80px !important;
+        height: 35px !important;
+        right: 20px !important;
+        bottom: 10px !important; /* Move it lower */
+        font-size: 0.8rem !important; /* Smaller font */
     }
 
 
