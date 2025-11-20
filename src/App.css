@@ -267,6 +267,29 @@ body[data-theme='light'] {
   color: #fff;
 }
 
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    min-height: 50vh; /* Ensure enough height but allow content to flow */
+    padding: 4rem 1rem; /* Add horizontal padding */
+    background-attachment: scroll; /* Fix background on mobile */
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem; /* Smaller title */
+  }
+
+  .hero-content p {
+    font-size: 1.1rem; /* Smaller subtitle */
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-button {
+    padding: 0.8rem 2rem; /* Smaller button padding */
+    font-size: 0.95rem;
+  }
+}
+
 
 /* Main Content Grid - Modern Redesign */
 .main-grid-container {
