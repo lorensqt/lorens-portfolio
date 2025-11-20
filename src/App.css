@@ -702,18 +702,37 @@ body[data-theme='light'] .profile-card-glass .social-links a {
   border-color: rgba(0, 0, 0, 0.05);
 }
 
-/* Unified Social Button Hover - Use Accent Color */
-.profile-card-glass .social-links .social-btn:hover {
-  color: white !important; 
-  background-color: var(--accent-color) !important; /* Use theme accent */
-  border-color: var(--accent-color);
+/* Individual Social Button Colors on Hover */
+.profile-card-glass .social-links a:hover {
+  color: white !important; /* Keep icon white */
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(229, 57, 53, 0.3);
-  background: none; /* Reset any gradients */
+  border-color: transparent;
 }
 
-.profile-card-glass .social-links .social-btn:hover svg {
-  filter: none;
+.profile-card-glass .social-links .social-btn.facebook:hover {
+  background-color: #1877F2; /* Facebook Blue */
+  box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
+}
+
+.profile-card-glass .social-links .social-btn.messenger:hover {
+  background: linear-gradient(45deg, #00B2FF, #006AFF); /* Messenger Gradient */
+  box-shadow: 0 5px 15px rgba(0, 106, 255, 0.4);
+}
+
+.profile-card-glass .social-links .social-btn.gmail:hover {
+  background-color: #DB4437; /* Gmail Red */
+  box-shadow: 0 5px 15px rgba(219, 68, 55, 0.4);
+}
+
+.profile-card-glass .social-links .social-btn.phone:hover {
+   background-color: #4caf50 !important; /* Green for phone */
+   border-color: #4caf50;
+   box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+}
+
+/* Add a slight glow to the white icon on hover */
+.profile-card-glass .social-links a:hover svg {
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
 }
 
 

@@ -1,12 +1,19 @@
 import { useState, useEffect } from 'react';
 import { FcShop, FcMoneyTransfer, FcPuzzle, FcGlobe, FcCalendar, FcBusinessman, FcBriefcase, FcLike, FcCommandLine, FcApproval, FcSettings, FcCollaboration, FcOk } from "react-icons/fc";
-import { FaFacebookF, FaFacebookMessenger, FaDownload } from "react-icons/fa";
+import { FaFacebookF, FaFacebookMessenger, FaDownload, FaPhone } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
+import Notification from './components/Notification';
 import './App.css';
 
 function App() {
   const [theme, setTheme] = useState('light');
   const [isBioVisible, setIsBioVisible] = useState(false);
+  const [notification, setNotification] = useState<{
+    message: string;
+    type: 'success' | 'confirm';
+    link?: string;
+    onConfirm?: () => void;
+  } | null>(null);
 
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
@@ -14,6 +21,36 @@ function App() {
 
   const toggleBio = () => {
     setIsBioVisible(!isBioVisible);
+  };
+
+  const closeNotification = () => {
+    setNotification(null);
+  };
+
+  const handleSocialClick = (link: string) => {
+    navigator.clipboard.writeText(link);
+    setNotification({
+      type: 'confirm',
+      message: 'Link copied to clipboard! Would you like to open it?',
+      link: link,
+      onConfirm: () => window.open(link, '_blank')
+    });
+  };
+
+  const handlePhoneClick = (phoneNumber: string) => {
+    navigator.clipboard.writeText(phoneNumber);
+    setNotification({
+      type: 'success',
+      message: 'Phone number copied to clipboard!'
+    });
+  };
+
+  const handleEmailClick = (email: string) => {
+    navigator.clipboard.writeText(email);
+    setNotification({
+      type: 'success',
+      message: 'Email address copied to clipboard!'
+    });
   };
 
   useEffect(() => {
@@ -30,6 +67,15 @@ function App() {
 
   return (
     <div className="App">
+      {notification && (
+        <Notification
+          message={notification.message}
+          type={notification.type}
+          link={notification.link}
+          onConfirm={notification.onConfirm}
+          onClose={closeNotification}
+        />
+      )}
       <nav className="navbar">
         <div className="nav-logo">JLC</div>
         <ul className="nav-links">
@@ -225,9 +271,10 @@ function App() {
               </div>
 
               <div className="social-links">
-                <a href="#" aria-label="Facebook" className="social-btn facebook"><FaFacebookF /></a>
-                <a href="#" aria-label="Messenger" className="social-btn messenger"><FaFacebookMessenger /></a>
-                <a href="#" aria-label="Gmail" className="social-btn gmail"><SiGmail /></a>
+                <a href="#" onClick={(e) => { e.preventDefault(); handleSocialClick('https://www.facebook.com/omorfos69'); }} aria-label="Facebook" className="social-btn facebook"><FaFacebookF /></a>
+                <a href="#" onClick={(e) => { e.preventDefault(); handleSocialClick('https://m.me/omorfos69'); }} aria-label="Messenger" className="social-btn messenger"><FaFacebookMessenger /></a>
+                <a href="#" onClick={(e) => { e.preventDefault(); handleEmailClick('castillojohnlaurence0@gmail.com'); }} aria-label="Gmail" className="social-btn gmail"><SiGmail /></a>
+                <a href="#" onClick={(e) => { e.preventDefault(); handlePhoneClick('09942617194'); }} aria-label="Phone" className="social-btn phone"><FaPhone /></a>
               </div>
 
               <a href="/lorens_resume.pdf" download="lorens_resume.pdf" className="download-cv-btn">
