@@ -220,7 +220,7 @@ body[data-theme='light'] {
   .main-grid-container {
     display: flex;
     flex-direction: column;
-    padding: 2rem 1rem; /* Reduced padding */
+    padding: 1rem 1rem; /* Reduced padding */
     gap: 2rem;
   }
 
@@ -996,6 +996,10 @@ body[data-theme='light'] .values-icon-wrapper {
     border-color: rgba(0, 0, 0, 0.05);
 }
 
+.values-header-section h3 {
+    font-size: 1.2rem; /* Smaller font size for mobile */
+}
+
 .values-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Reduced min-width */
@@ -1471,11 +1475,9 @@ body[data-theme='light'] .pill-pest {
 
 .services-modern-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 1rem;
-  z-index: 1;
 }
-
 .service-modern-item {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -1994,6 +1996,35 @@ body[data-theme='light'] .project-item:hover {
     }
 
     /* Stats Section - Hide or Reformat? Let's hide for a cleaner crosswise card on mobile, or make it very compact */
+
+    /* What I Offer Mobile Adjustments */
+    .services-card h3 {
+        font-size: 1.2rem !important; /* Smaller font size for mobile */
+    }
+
+    .services-main-icon {
+        font-size: 1.5rem !important; /* Smaller icon size for mobile */
+    }
+
+    .services-modern-grid {
+        grid-template-columns: 1fr 1fr !important; /* Force 2 columns */
+        gap: 0.8rem !important;
+    }
+
+    .service-modern-item {
+        padding: 1rem 0.5rem !important; /* Reduced padding */
+        min-height: 110px;
+    }
+
+    .service-modern-item span {
+        font-size: 0.8rem !important;
+    }
+
+    .service-modern-item .icon-box svg {
+        width: 32px !important; /* Smaller inner icons */
+        height: 32px !important;
+    }
+
     .profile-stats {
         display: none !important; /* Hide stats to save vertical space for a true 'card' feel */
     }
@@ -2021,5 +2052,54 @@ body[data-theme='light'] .project-item:hover {
         margin-top: 0.5rem !important;
         flex-basis: 100%; /* Force to new line */
         justify-content: center !important;
+    }
+
+    /* Core Values Mobile Adjustments */
+    .values-card {
+        padding: 1.2rem !important; /* Reduced card padding */
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr 1fr !important; /* Force 2 columns */
+        gap: 0.8rem !important; /* Tighter gap */
+    }
+
+    .value-item {
+        flex-direction: column !important; /* Stack icon and text vertically */
+        text-align: center !important;
+        padding: 0.8rem !important;
+        gap: 0.5rem !important;
+        min-height: 100px; /* Ensure consistent height */
+        justify-content: flex-start; /* Align items to top */
+    }
+    
+    .value-item > svg {
+        font-size: 24px !important; /* Smaller icon */
+        margin-bottom: 0.2rem;
+    }
+
+    .value-text {
+        align-items: center !important; /* Center text block */
+        width: 100%;
+    }
+
+    .value-item h4 {
+        font-size: 0.85rem !important;
+        margin-bottom: 0.2rem !important;
+        text-align: center !important;
+    }
+
+    .value-item p {
+        font-size: 0.7rem !important;
+        line-height: 1.2 !important;
+        text-align: center !important;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* Limit text lines if too long */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .values-main-icon {
+        font-size: 1.5rem !important; /* Smaller icon size for mobile */
     }
 }
