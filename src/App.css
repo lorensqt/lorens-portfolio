@@ -291,7 +291,7 @@ body[data-theme='light'] {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 2rem;
-  padding: 4rem 2rem;
+  padding: 1.5rem 2rem;
   background: linear-gradient(180deg, var(--bg-color-light) 0%, var(--secondary-color-light) 100%);
 }
 
@@ -1100,25 +1100,52 @@ body[data-theme='light'] .value-item:hover {
 }
 
 .footer-glass {
-
   margin-top: 4rem;
   padding: 3rem 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--text-color);
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 150px;
+  position: relative;
+  overflow: hidden; /* Needed for pseudo-elements */
+  z-index: 1;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+  border-radius: 20px; /* Consistent with cards */
+  background: transparent; /* Base is transparent as after handles it */
 }
 
-body[data-theme='light'] .footer-glass {
-  background: rgba(255, 255, 255, 0.8);
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  color: var(--text-color);
+.footer-glass::before {
+  content: "";
+  position: absolute;
+  inset: -3px; /* Thickness of the border */
+  border-radius: 22px; /* Slightly larger than footer */
+  background: linear-gradient(45deg, 
+    #00bcd4, /* Cyan */
+    #00e676, /* Green */
+    #00bcd4
+  );
+  background-size: 300% 300%;
+  z-index: -2;
+  animation: gradientBorder 8s ease infinite reverse;
+  opacity: 0.7;
+}
+
+.footer-glass::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: -1;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+}
+
+body[data-theme='light'] .footer-glass::after {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.footer-glass:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(0, 188, 212, 0.3); /* Cyan glow */
 }
 
 .footer-content {
@@ -1128,11 +1155,16 @@ body[data-theme='light'] .footer-glass {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   text-align: left;
+  position: relative; /* Ensure content stays above pseudo-elements */
+  z-index: 1;
 }
 
 .footer-brand h4 {
   font-size: 1.5rem;
-  color: var(--accent-color);
+  background: linear-gradient(135deg, var(--text-color) 40%, #00bcd4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   margin: 0 0 0.5rem 0;
   font-weight: 700;
   letter-spacing: 1px;
@@ -1175,7 +1207,7 @@ body[data-theme='light'] .footer-glass {
   bottom: -5px;
   width: 30px;
   height: 2px;
-  background-color: var(--accent-color);
+  background-color: #00bcd4; /* Cyan accent for footer underlines */
 }
 
 .footer-links ul {
@@ -1198,7 +1230,7 @@ body[data-theme='light'] .footer-glass {
 
 .footer-links a:hover {
   opacity: 1;
-  color: var(--accent-color);
+  color: #00bcd4; /* Cyan on hover */
   padding-left: 5px;
 }
 
@@ -1214,22 +1246,24 @@ body[data-theme='light'] .footer-glass {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05); /* Lighter glass effect */
   color: var(--text-color);
   font-size: 1.2rem;
   transition: all 0.3s ease;
-  border: 1px solid transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 body[data-theme='light'] .footer-social a {
   background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
 }
 
 .footer-social a:hover {
-  background: var(--accent-color);
+  background: #00bcd4; /* Cyan fill on hover */
   color: white;
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(229, 57, 53, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 188, 212, 0.3); /* Cyan glow */
+  border-color: transparent;
 }
 
 @media (max-width: 768px) {
@@ -1254,6 +1288,7 @@ body[data-theme='light'] .footer-social a {
     transform: scale(1.05);
   }
 }
+
 
 /* Theme Toggle */
 .theme-toggle {
@@ -1633,6 +1668,30 @@ body[data-theme='light'] .service-modern-item:hover {
 
 .service-modern-item:hover::after {
   transform: scaleX(1);
+}
+
+/* Services Description Text */
+.services-description-container {
+  padding: 0 1rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px; /* Ensure some height */
+}
+
+.services-description-text {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-color);
+  opacity: 0.95;
+  margin: 0;
+  max-width: 90%;
+}
+
+.services-card .services-description-text strong {
+  color: #0abcee; /* Match the services card blue accent */
+  font-weight: 700;
 }
 
 /* Tech Stack Card Redesign */

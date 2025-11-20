@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FcShop, FcMoneyTransfer, FcPuzzle, FcGlobe, FcCalendar, FcBriefcase, FcLike, FcCommandLine, FcApproval, FcSettings, FcCollaboration, FcFlashOn, FcCellPhone } from "react-icons/fc";
+import { FcBriefcase, FcCommandLine, FcApproval, FcSettings, FcCollaboration, FcFlashOn, FcCellPhone } from "react-icons/fc";
 import { FaFacebookF, FaFacebookMessenger, FaDownload, FaPhone } from "react-icons/fa";
 import { SiGmail, SiCisco, SiNginx, SiLinux } from "react-icons/si";
 import Notification from './components/Notification';
@@ -132,31 +132,10 @@ function App() {
                 </div>
                 <h3>What I Offer</h3>
               </div>
-              <div className="services-modern-grid">
-                <div className="service-modern-item">
-                  <div className="icon-box"><FcShop size={40} /></div>
-                  <span>E-commerce</span>
-                </div>
-                <div className="service-modern-item">
-                  <div className="icon-box"><FcMoneyTransfer size={40} /></div>
-                  <span>Sinking Fund</span>
-                </div>
-                <div className="service-modern-item">
-                  <div className="icon-box"><FcPuzzle size={40} /></div>
-                  <span>Automations</span>
-                </div>
-                <div className="service-modern-item">
-                  <div className="icon-box"><FcGlobe size={40} /></div>
-                  <span>Public Websites</span>
-                </div>
-                <div className="service-modern-item">
-                  <div className="icon-box"><FcCalendar size={40} /></div>
-                  <span>Reservations</span>
-                </div>
-                <div className="service-modern-item">
-                  <div className="icon-box"><FcLike size={40} /></div>
-                  <span>Wedding Websites</span>
-                </div>
+              <div className="services-description-container">
+                <p className="services-description-text">
+                  I build custom websites and applications tailored to your specific business needs. Whether it's <strong>Business Management Systems</strong>, <strong>E-commerce Platforms</strong>, or <strong>Automated Workflows</strong>, I deliver scalable solutions designed to help you manage and grow your business effectively.
+                </p>
               </div>
             </div>
             <div className="card-main tech-stack-card full-width" id="tech-stack">
