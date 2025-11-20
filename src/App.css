@@ -912,8 +912,145 @@ body[data-theme='light'] .profile-card-glass .social-links a {
   color: var(--accent-color);
 }
 
-/* Footer Redesign */
+
+/* --- Core Values Card Styles --- */
+.values-card {
+    /* Inherits .card-main styles but with extra flair */
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Decorative background element for modern feel */
+.values-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(var(--accent-color-rgb), 0.1) 0%, transparent 70%);
+    filter: blur(40px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.values-header-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Matched services-header-section gap */
+    margin-bottom: 0.5rem; /* Matched services-header-section margin-bottom */
+    position: relative;
+    z-index: 1;
+    /* Removed padding-bottom and border-bottom to match services */
+}
+
+.values-icon-wrapper {
+    background: rgba(255, 255, 255, 0.15); /* Whiter in dark mode */
+    padding: 0.8rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.values-card:hover .values-icon-wrapper {
+    transform: scale(1.1) rotate(10deg);
+    border-color: var(--accent-color);
+}
+
+.values-main-icon {
+    font-size: 2rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.values-header-section h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin: 0;
+    line-height: 1.2;
+    color: var(--accent-color);
+}
+
+body[data-theme='light'] .values-icon-wrapper {
+    background: rgba(255, 255, 255, 0.5); /* Whiter in light mode */
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Reduced min-width */
+    gap: 1rem; /* Reduced gap */
+}
+
+.value-item {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1rem 1.2rem; /* Reduced padding */
+    border-radius: 12px; /* Slightly smaller radius */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 0.8rem; /* Reduced gap */
+    transition: all 0.3s ease;
+}
+
+body[data-theme='light'] .value-item {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+.value-item:hover {
+    transform: translateY(-3px); /* Less dramatic lift */
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent-color);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Reduced shadow */
+}
+
+body[data-theme='light'] .value-item:hover {
+    background: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.value-item > svg {
+    flex-shrink: 0;
+    filter: drop-shadow(0 3px 5px rgba(0,0,0,0.1)); /* Reduced shadow */
+    transition: transform 0.3s ease;
+    font-size: 28px; /* Reduced icon size from 35px */
+}
+
+.value-item:hover > svg {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.value-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.value-item h4 {
+    margin: 0 0 0.2rem 0; /* Adjusted margin */
+    font-size: 1rem; /* Reduced font size */
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.value-item p {
+    font-size: 0.8rem; /* Reduced font size */
+    color: var(--text-secondary);
+    line-height: 1.3;
+    margin: 0;
+    opacity: 0.8;
+}
+
 .footer-glass {
+
   margin-top: 4rem;
   padding: 3rem 2rem;
   background: rgba(255, 255, 255, 0.05);

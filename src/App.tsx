@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { FcShop, FcMoneyTransfer, FcPuzzle, FcGlobe, FcCalendar, FcBusinessman, FcBriefcase, FcLike, FcCommandLine, FcApproval, FcSettings, FcCollaboration, FcOk } from "react-icons/fc";
+import { FcShop, FcMoneyTransfer, FcPuzzle, FcGlobe, FcCalendar, FcBusinessman, FcBriefcase, FcLike, FcCommandLine, FcApproval, FcSettings, FcCollaboration, FcOk, FcFlashOn, FcCellPhone } from "react-icons/fc";
 import { FaFacebookF, FaFacebookMessenger, FaDownload, FaPhone } from "react-icons/fa";
-import { SiGmail } from "react-icons/si";
+import { SiGmail, SiCisco, SiNginx, SiLinux } from "react-icons/si";
 import Notification from './components/Notification';
 import './App.css';
 
@@ -100,32 +100,42 @@ function App() {
       <main id="main-content" className="main-grid-container">
         <div className="left-column">
           <div className="card-grid-main">
-            <div className="card-main about-card" id="about">
-              <div className="about-header-section">
-                <div className="about-icon-wrapper">
-                  <FcBusinessman className="about-main-icon" />
+            <div className="card-main values-card" id="values">
+              <div className="values-header-section">
+                <div className="values-icon-wrapper">
+                  <FcApproval className="values-main-icon" />
                 </div>
-                <div className="about-title-wrapper">
-                  <h3>About Me</h3>
-                  <span className="about-role">Full Stack Developer</span>
-                </div>
+                <h3>Core Values</h3>
               </div>
-              <div className="about-body">
-                <p className="about-intro">
-                  Hi, I'm <span className="name-highlight">LORENS</span>.
-                </p>
-                <p className="about-description">
-                  I build dynamic web applications with a focus on quality and performance.
-                </p>
-                <div className="about-skills-container">
-                  <span className="skill-pill pill-laravel">Laravel</span>
-                  <span className="skill-pill pill-react">React</span>
-                  <span className="skill-pill pill-vue">Vue</span>
-                  <span className="skill-pill pill-pest">Pest</span>
+              <div className="values-grid">
+                <div className="value-item">
+                  <FcFlashOn size={35} />
+                  <div className="value-text">
+                    <h4>High Performance</h4>
+                    <p>Optimized for speed and efficiency.</p>
+                  </div>
                 </div>
-                <p className="about-philosophy">
-                  Ensuring every solution is elegant, efficient, and robust.
-                </p>
+                <div className="value-item">
+                  <FcCellPhone size={35} />
+                  <div className="value-text">
+                    <h4>Responsive</h4>
+                    <p>Perfect on mobile, tablet, and desktop.</p>
+                  </div>
+                </div>
+                <div className="value-item">
+                  <FcSettings size={35} />
+                  <div className="value-text">
+                    <h4>Scalable Code</h4>
+                    <p>Clean architecture ready for growth.</p>
+                  </div>
+                </div>
+                <div className="value-item">
+                  <FcCollaboration size={35} />
+                  <div className="value-text">
+                    <h4>User-Centric</h4>
+                    <p>Designed with the end-user in mind.</p>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="card-main services-card" id="services">
@@ -214,6 +224,18 @@ function App() {
                   <i className="devicon-googlecloud-plain colored"></i>
                   <span>GCP</span>
                 </div>
+                <div className="tech-item">
+                  <SiLinux size={45} color="#FCC624" />
+                  <span>Linux</span>
+                </div>
+                <div className="tech-item">
+                  <SiNginx size={45} color="#009639" />
+                  <span>Nginx</span>
+                </div>
+                <div className="tech-item">
+                  <SiCisco size={45} color="#1BA0D7" />
+                  <span>Cisco</span>
+                </div>
               </div>
             </div>
             <div className="card-main projects-card full-width" id="projects">
@@ -294,9 +316,8 @@ function App() {
       <aside className={`bio-section ${isBioVisible ? 'visible' : ''}`}>
         <img src="/nobgprofile.png" className="bio-image" alt="John Laurence Castillo" />
         <div className="bio-content">
-          {/* <h3>Laurence Castillo</h3> */}
-          <h4>Freelance Design & Development Expert</h4>
-          <p>I create user-focused web and mobile solutions that help businesses grow.</p>
+          <h4>Hi, I'm LORENS</h4>
+          <p>I craft compelling web and mobile experiences. Let's build something amazing together.</p>
         </div>
       </aside>
 
