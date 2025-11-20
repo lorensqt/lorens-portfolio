@@ -248,7 +248,7 @@ function App() {
                 <a href="#" onClick={(e) => { e.preventDefault(); handlePhoneClick('09942617194'); }} aria-label="Phone" className="social-btn phone"><FaPhone /></a>
               </div>
 
-              <a href="/lorens_resume.pdf" download="lorens_resume.pdf" className="download-cv-btn">
+              <a href="lorens_resume.pdf" download="lorens_resume.pdf" className="download-cv-btn">
                 <FaDownload />
                 <span>Download CV</span>
               </a>

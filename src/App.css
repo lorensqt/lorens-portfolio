@@ -2002,6 +2002,9 @@ body[data-theme='light'] .projects-icon-wrapper {
         padding: 1.5rem !important;
         gap: 1rem !important;
         border-radius: 16px !important;
+        z-index: 5 !important; /* Ensure it stays on top */
+        position: relative !important;
+        overflow: visible !important;
     }
 
     /* Header Section (Name & Tagline) */
