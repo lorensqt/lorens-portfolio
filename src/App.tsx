@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { FcShop, FcMoneyTransfer, FcPuzzle, FcGlobe, FcCalendar, FcBusinessman, FcBriefcase, FcLike, FcCommandLine, FcApproval, FcSettings, FcCollaboration, FcDownload, FcOk } from "react-icons/fc";
-import { FaFacebookF, FaFacebookMessenger } from "react-icons/fa";
+import { FcShop, FcMoneyTransfer, FcPuzzle, FcGlobe, FcCalendar, FcBusinessman, FcBriefcase, FcLike, FcCommandLine, FcApproval, FcSettings, FcCollaboration, FcOk } from "react-icons/fc";
+import { FaFacebookF, FaFacebookMessenger, FaDownload } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import './App.css';
 
@@ -19,6 +19,14 @@ function App() {
   useEffect(() => {
     document.body.setAttribute('data-theme', theme);
   }, [theme]);
+
+  // Trigger bio entrance after delay
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsBioVisible(true);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className="App">
@@ -206,12 +214,12 @@ function App() {
 
               <div className="profile-stats">
                 <div className="stat-item">
-                  <span className="stat-value">5+</span>
+                  <span className="stat-value">2+</span>
                   <span className="stat-label">Years Exp.</span>
                 </div>
                 <div className="stat-divider"></div>
                 <div className="stat-item">
-                  <span className="stat-value">30+</span>
+                  <span className="stat-value">10+</span>
                   <span className="stat-label">Projects</span>
                 </div>
               </div>
@@ -223,7 +231,7 @@ function App() {
               </div>
 
               <a href="/lorens_resume.pdf" download="lorens_resume.pdf" className="download-cv-btn">
-                <FcDownload size={24} />
+                <FaDownload />
                 <span>Download CV</span>
               </a>
             </div>
@@ -251,6 +259,7 @@ function App() {
             <h4>LORENS</h4>
             <p>© 2025 John Laurence Castillo</p>
             <p className="footer-tagline">Building digital experiences.</p>
+            <p className="footer-react-note">This page is made with React</p>
           </div>
         </div>
       </footer>
