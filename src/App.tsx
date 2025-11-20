@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import { FcShop, FcMoneyTransfer, FcPuzzle, FcGlobe, FcCalendar, FcBusinessman, FcBriefcase, FcLike, FcCommandLine, FcApproval, FcSettings, FcCollaboration, FcOk, FcFlashOn, FcCellPhone } from "react-icons/fc";
+import { FcShop, FcMoneyTransfer, FcPuzzle, FcGlobe, FcCalendar, FcBriefcase, FcLike, FcCommandLine, FcApproval, FcSettings, FcCollaboration, FcFlashOn, FcCellPhone } from "react-icons/fc";
 import { FaFacebookF, FaFacebookMessenger, FaDownload, FaPhone } from "react-icons/fa";
 import { SiGmail, SiCisco, SiNginx, SiLinux } from "react-icons/si";
 import Notification from './components/Notification';
 import './App.css';
 
 function App() {
-  const [theme, setTheme] = useState('light');
+  const [theme] = useState('light');
   const [isBioVisible, setIsBioVisible] = useState(false);
   const [notification, setNotification] = useState<{
     message: string;
@@ -14,10 +14,6 @@ function App() {
     link?: string;
     onConfirm?: () => void;
   } | null>(null);
-
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
 
   const toggleBio = () => {
     setIsBioVisible(!isBioVisible);
@@ -76,18 +72,6 @@ function App() {
           onClose={closeNotification}
         />
       )}
-      <nav className="navbar">
-        <div className="nav-logo">JLC</div>
-        <ul className="nav-links">
-          <li><a href="#home"><span>Home</span></a></li>
-          <li><a href="#main-content"><span>About</span></a></li>
-          <li><a href="#main-content"><span>Projects</span></a></li>
-          <li><a href="#contact"><span>Contact</span></a></li>
-        </ul>
-        <button className="theme-toggle" onClick={toggleTheme}>
-          {theme === 'dark' ? 'Light' : 'Dark'}
-        </button>
-      </nav>
 
       <header id="home" className="hero">
         <div className="hero-content">

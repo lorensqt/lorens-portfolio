@@ -36,80 +36,7 @@ body[data-theme='light'] {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Navbar */
-.navbar {
-  display: none; /* Hidden for now */
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: var(--primary-color); /* Solid background */
-  border-bottom: 1px solid var(--border-color);
-  animation: fadeInDown 1s ease-in-out; /* Entrance animation */
-}
-
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.nav-logo {
-  font-size: 1.8rem; /* Slightly larger */
-  font-weight: bold;
-  color: var(--accent-color);
-  text-shadow: 0 0 5px var(--accent-color); /* Add a glow effect */
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li {
-  margin-left: 2.5rem; /* Increased spacing */
-}
-
-.nav-links a {
-  color: var(--text-color);
-  text-decoration: none;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem; /* Space between icon and text */
-  padding: 0.5rem 1rem; /* Padding for the pill shape */
-  border-radius: 20px; /* Rounded corners for the pill */
-  transition: color 0.3s, background-color 0.3s, text-shadow 0.3s;
-  position: relative;
-}
-
-.nav-links a:hover {
-  color: var(--accent-color);
-  background-color: rgba(229, 57, 53, 0.1); /* Faded accent color */
-  text-shadow: 0 0 5px var(--accent-color); /* Glow on hover */
-}
-
-.nav-links a svg {
-  width: 20px;
-  height: 20px;
-}
-
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-}
+/* Navbar Removed */
 
 /* Hero Section */
 .hero {
@@ -300,6 +227,8 @@ body[data-theme='light'] {
   .right-column {
     order: -1; /* Move Profile to top */
     width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
   }
 
   .left-column {
@@ -307,9 +236,9 @@ body[data-theme='light'] {
     width: 100%;
   }
 
-  /* Disable sticky on mobile */
+  /* Disable sticky wrapper on mobile since parent handles it */
   .profile-sticky-wrapper {
-    position: static;
+    position: static !important; 
     animation: none; /* Remove slide-in animation on mobile for simpler load */
   }
   
@@ -572,7 +501,7 @@ body[data-theme='light'] #tech-stack li:hover {
 .profile-sticky-wrapper {
   position: -webkit-sticky; /* Safari support */
   position: sticky;
-  top: 6rem; /* Height of navbar + spacing */
+  top: 2rem; /* Reduced spacing since navbar is gone */
   z-index: 10;
   animation: fadeInRight 0.8s ease-out forwards;
 }
@@ -2026,9 +1955,9 @@ body[data-theme='light'] .project-item:hover {
     .profile-card-glass {
         flex-direction: row !important; /* Switch to horizontal layout */
         flex-wrap: wrap !important; /* Allow wrapping for smaller screens if needed */
-        justify-content: space-between !important; /* Space out header and other elements */
+        justify-content: center !important; /* Center items horizontally */
         align-items: center !important;
-        text-align: left !important; /* Align text to left */
+        text-align: center !important; /* Center text within the card */
         padding: 1rem !important;
         gap: 0.8rem !important;
         border-radius: 16px !important;
@@ -2036,19 +1965,22 @@ body[data-theme='light'] .project-item:hover {
 
     /* Header Section (Name & Tagline) */
     .profile-header {
-        align-items: flex-start !important; /* Align header content to left */
+        align-items: center !important; /* Center items horizontally */
         width: auto !important; /* Allow it to take necessary space */
         flex: 1 1 auto; /* Let it grow */
+        text-align: center !important; /* Center text within the header */
     }
 
     .profile-header h2 {
         font-size: 1.2rem !important;
         margin-bottom: 0.1rem !important;
+        text-align: center !important;
     }
 
     .profile-tagline {
         font-size: 0.7rem !important;
         margin-bottom: 0.3rem !important;
+        text-align: center !important;
     }
     
     .status-indicator-wrapper {
