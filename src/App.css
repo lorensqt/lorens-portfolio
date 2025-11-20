@@ -288,7 +288,116 @@ body[data-theme='light'] {
     padding: 0.8rem 2rem; /* Smaller button padding */
     font-size: 0.95rem;
   }
+
+  /* Mobile Layout Reordering */
+  .main-grid-container {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem; /* Reduced padding */
+    gap: 2rem;
+  }
+
+  .right-column {
+    order: -1; /* Move Profile to top */
+    width: 100%;
+  }
+
+  .left-column {
+    order: 1;
+    width: 100%;
+  }
+
+  /* Disable sticky on mobile */
+  .profile-sticky-wrapper {
+    position: static;
+    animation: none; /* Remove slide-in animation on mobile for simpler load */
+  }
+  
+  .profile-card-glass {
+      padding: 1.5rem 1rem; /* Further compact profile card */
+      gap: 1.5rem;
+  }
+
+  .profile-header h2 {
+      font-size: 1.6rem;
+  }
+
+  .profile-tagline {
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+  }
+
+  .profile-stats {
+      padding: 1rem 0;
+  }
+
+  .stat-value {
+      font-size: 1.5rem;
+  }
+
+  .stat-label {
+      font-size: 0.75rem;
+  }
+
+  .profile-card-glass .social-links {
+      gap: 1rem;
+      margin: 0.5rem 0;
+  }
+
+  .profile-card-glass .social-links a {
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+  }
+
+  .download-cv-btn {
+      padding: 0.9rem 1.5rem;
+      font-size: 0.9rem;
+      gap: 0.6rem;
+  }
+
+  .download-cv-btn svg {
+      font-size: 1.1rem;
+  }
+
+  /* Bio Section adjustments for mobile */
+  .bio-section {
+    width: 159px; /* Max width for mobile */
+    max-width: 330px;
+    height: auto; /* Allow content to dictate height */
+    min-height: 150px; /* Minimum height */
+    bottom: 15px;
+    right: 5%;
+    padding: 1rem;
+    border-radius: 15px;
+    margin-right: -15px;
+  }
+
+  .bio-content {
+    padding-right: 0; /* Remove right padding */
+  }
+
+  .bio-content h4 {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .bio-content p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .bio-image {
+    width: 80px; /* Further reduced width */
+    height: 80px; /* Further reduced height */
+    object-fit: contain;
+    margin-right: -15px;
+    margin-top: 17px;
+    transform: scale(0.9); /* Further scale down */
+    filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.2));
+  }
 }
+
 
 
 /* Main Content Grid - Modern Redesign */
