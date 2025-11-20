@@ -313,53 +313,6 @@ body[data-theme='light'] {
     animation: none; /* Remove slide-in animation on mobile for simpler load */
   }
   
-  .profile-card-glass {
-      padding: 1.5rem 1rem; /* Further compact profile card */
-      gap: 1.5rem;
-  }
-
-  .profile-header h2 {
-      font-size: 1.6rem;
-  }
-
-  .profile-tagline {
-      font-size: 0.85rem;
-      letter-spacing: 1px;
-  }
-
-  .profile-stats {
-      padding: 1rem 0;
-  }
-
-  .stat-value {
-      font-size: 1.5rem;
-  }
-
-  .stat-label {
-      font-size: 0.75rem;
-  }
-
-  .profile-card-glass .social-links {
-      gap: 1rem;
-      margin: 0.5rem 0;
-  }
-
-  .profile-card-glass .social-links a {
-      width: 40px;
-      height: 40px;
-      font-size: 1.2rem;
-  }
-
-  .download-cv-btn {
-      padding: 0.9rem 1.5rem;
-      font-size: 0.9rem;
-      gap: 0.6rem;
-  }
-
-  .download-cv-btn svg {
-      font-size: 1.1rem;
-  }
-
   /* Bio Section adjustments for mobile */
   .bio-section {
     width: 159px; /* Max width for mobile */
@@ -2050,4 +2003,91 @@ body[data-theme='light'] .project-item:hover {
 
   transform-origin: left;
 
+}
+
+    .download-cv-btn svg {
+        font-size: 0.9rem !important;
+    }
+
+
+/* Mobile Overrides for Main Content Grid */
+@media (max-width: 768px) {
+    .main-grid-container {
+        grid-template-columns: 1fr !important; /* Ensure single column for main grid on mobile */
+        /* flex-direction: column; is already set in the general mobile block */
+    }
+
+    .card-grid-main {
+        grid-template-columns: 1fr !important; /* Force single column for cards within the main grid */
+        gap: 1.5rem !important;
+    }
+
+    /* Existing Profile Card Overrides (kept for context, already applied) */
+    .profile-card-glass {
+        flex-direction: row !important; /* Switch to horizontal layout */
+        flex-wrap: wrap !important; /* Allow wrapping for smaller screens if needed */
+        justify-content: space-between !important; /* Space out header and other elements */
+        align-items: center !important;
+        text-align: left !important; /* Align text to left */
+        padding: 1rem !important;
+        gap: 0.8rem !important;
+        border-radius: 16px !important;
+    }
+
+    /* Header Section (Name & Tagline) */
+    .profile-header {
+        align-items: flex-start !important; /* Align header content to left */
+        width: auto !important; /* Allow it to take necessary space */
+        flex: 1 1 auto; /* Let it grow */
+    }
+
+    .profile-header h2 {
+        font-size: 1.2rem !important;
+        margin-bottom: 0.1rem !important;
+    }
+
+    .profile-tagline {
+        font-size: 0.7rem !important;
+        margin-bottom: 0.3rem !important;
+    }
+    
+    .status-indicator-wrapper {
+         padding: 0.2rem 0.5rem !important;
+         margin-top: 0.2rem !important;
+    }
+
+    /* Hide status text on very small screens if needed, or keep it compact */
+    .status-text {
+        font-size: 0.6rem !important;
+    }
+
+    /* Stats Section - Hide or Reformat? Let's hide for a cleaner crosswise card on mobile, or make it very compact */
+    .profile-stats {
+        display: none !important; /* Hide stats to save vertical space for a true 'card' feel */
+    }
+
+    /* Social Links */
+    .profile-card-glass .social-links {
+        flex-direction: row !important;
+        justify-content: flex-end !important; /* Push to right */
+        gap: 0.5rem !important;
+        margin: 0 !important;
+        flex: 0 0 auto; /* Don't shrink */
+    }
+
+    .profile-card-glass .social-links a {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* Download Button - Full width at bottom or aligned? Let's make it full width below */
+    .download-cv-btn {
+        width: 100% !important;
+        padding: 0.6rem !important;
+        font-size: 0.8rem !important;
+        margin-top: 0.5rem !important;
+        flex-basis: 100%; /* Force to new line */
+        justify-content: center !important;
+    }
 }
