@@ -263,7 +263,7 @@ function App() {
       </button>
 
       <aside className={`bio-section ${isBioVisible ? 'visible' : ''}`}>
-        <img src="/nobgprofile.png" className="bio-image" alt="John Laurence Castillo" />
+        <img src="nobgprofile.png" className="bio-image" alt="John Laurence Castillo" />
         <div className="bio-content">
           <h4>Hi, I'm LORENS</h4>
           <p>I craft compelling web and mobile experiences. Let's build something amazing together.</p>
