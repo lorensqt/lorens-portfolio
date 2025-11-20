@@ -2102,4 +2102,68 @@ body[data-theme='light'] .project-item:hover {
     .values-main-icon {
         font-size: 1.5rem !important; /* Smaller icon size for mobile */
     }
+
+    /* Tech Stack Mobile Adjustments */
+    .tech-stack-card h3 {
+        font-size: 1.2rem !important;
+    }
+
+    .tech-main-icon {
+        font-size: 1.5rem !important;
+    }
+
+    .tech-grid {
+        grid-template-columns: repeat(3, 1fr) !important; /* Force 3 columns */
+        gap: 0.5rem !important; /* Tighter gap for 3 columns */
+    }
+
+    .tech-item {
+        padding: 0.8rem 0.4rem !important; /* Reduced padding */
+        min-height: 90px; /* Ensure consistent height */
+    }
+
+    .tech-item i {
+        font-size: 2rem !important; /* Smaller icon size */
+    }
+
+    .tech-item span {
+        font-size: 0.7rem !important; /* Smaller text size */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
+
+    /* Projects Card Mobile Adjustments */
+    .projects-card h3 {
+        font-size: 1.2rem !important;
+    }
+
+    .projects-main-icon {
+        font-size: 1.5rem !important;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr !important; /* Force 1 column for projects on mobile */
+        gap: 1rem !important; /* Adjusted gap */
+    }
+
+    .project-item {
+        padding: 1.2rem !important; /* Reduced padding */
+    }
+
+    .project-item svg {
+        font-size: 2.5rem !important; /* Smaller icon size */
+    }
+
+    .project-item h4 {
+        font-size: 1rem !important;
+    }
+
+    .project-item p {
+        font-size: 0.8rem !important;
+        line-height: 1.4 !important;
+    }
+
+
 }
