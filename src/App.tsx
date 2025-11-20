@@ -35,17 +35,20 @@ function App() {
 
   const handlePhoneClick = (phoneNumber: string) => {
     navigator.clipboard.writeText(phoneNumber);
+    window.location.href = `tel:${phoneNumber}`;
     setNotification({
       type: 'success',
-      message: 'Phone number copied to clipboard!'
+      message: 'Phone number copied and call initiated!'
     });
   };
 
   const handleEmailClick = (email: string) => {
     navigator.clipboard.writeText(email);
     setNotification({
-      type: 'success',
-      message: 'Email address copied to clipboard!'
+      type: 'confirm',
+      message: 'Email address copied! Go to Gmail?',
+      link: 'https://gmail.com',
+      onConfirm: () => window.open('https://gmail.com', '_blank')
     });
   };
 
@@ -77,7 +80,7 @@ function App() {
         <div className="hero-content">
           <h1 className="hero-title">Creative & Professional Web Solutions</h1>
           <p className="hero-subtitle">Building dynamic, responsive, and beautiful web applications.</p>
-          <a href="#contact" className="cta-button hero-button">LETS WORK TOGETHER</a>
+          <a href="#profile-card" className="cta-button hero-button">LETS WORK TOGETHER</a>
         </div>
       </header>
 
@@ -254,7 +257,7 @@ function App() {
         </div>
         <div className="right-column">
           <div className="profile-sticky-wrapper">
-            <div className="profile-card-glass">
+            <div className="profile-card-glass" id="profile-card">
               <div className="profile-header">
                 <h2>John Laurence Castillo</h2>
                 <span className="profile-tagline">Full Stack Developer</span>
