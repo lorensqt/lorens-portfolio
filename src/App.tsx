@@ -132,9 +132,9 @@ function App() {
                 </div>
                 <h3>What I Offer</h3>
               </div>
-              <div className="services-description-container">
-                <p className="services-description-text">
-                  I build custom websites and applications tailored to your specific business needs. Whether it's <strong>Business Management Systems</strong>, <strong>E-commerce Platforms</strong>, or <strong>Automated Workflows</strong>, I deliver scalable solutions designed to help you manage and grow your business effectively.
+              <div className="text-content-box">
+                <p>
+                  I build custom websites and applications tailored to your specific business needs. I deliver scalable solutions designed to help you manage and grow your business effectively.
                 </p>
               </div>
             </div>
@@ -211,7 +211,7 @@ function App() {
                 </div>
                 <h3>Projects</h3>
               </div>
-              <div className="projects-grid">
+              <div className="text-content-box">
                 <p>Most of my projects were internal and private, so they are not accessible or available for public viewing at this time. I'd be happy to discuss them in detail during a private conversation!</p>
               </div>
             </div>

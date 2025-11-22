@@ -224,7 +224,7 @@ body[data-theme='light'] {
   .main-grid-container {
     display: flex;
     flex-direction: column;
-    padding: 1rem 1rem; /* Reduced padding */
+    padding: 0.5rem 1rem; /* Reduced padding for mobile top */
     gap: 2rem;
   }
 
@@ -232,7 +232,8 @@ body[data-theme='light'] {
     order: -1; /* Move Profile to top */
     width: 100%;
     height: auto;
-    margin-bottom: 2rem;
+    margin-bottom: 3.5rem;
+    margin-top: -2rem;
   }
 
   .left-column {
@@ -1488,16 +1489,49 @@ body[data-theme='light'] .pill-pest {
   margin-top: 1rem;
 }
 
+/* Shared Text Content Box */
+.text-content-box {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  text-align: left;
+  margin-top: 0.5rem;
+}
+
+body[data-theme='light'] .text-content-box {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.text-content-box:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+body[data-theme='light'] .text-content-box:hover {
+  background: white;
+}
+
+.text-content-box p {
+  margin: 0;
+}
+
 /* Services Card Redesign */
 .services-card {
   /* Inherits .card-main styles */
   position: relative;
   overflow: hidden;
-  padding: 2.5rem; /* Increased padding for better spacing */
-  border-radius: 20px; /* Matched profile card */
+  padding: 2.5rem;
+  border-radius: 20px;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
   z-index: 1;
-  background: transparent; /* Base is transparent as after handles it */
+  background: transparent;
 }
 
 .services-card::before {
@@ -1535,6 +1569,12 @@ body[data-theme='light'] .services-card::after {
 .services-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(0, 114, 255, 0.3); /* Blue glow */
+}
+
+/* Hover effect for text box inside services card */
+.services-card:hover .text-content-box {
+  border-color: rgba(0, 198, 255, 0.6);
+  box-shadow: 0 5px 15px rgba(0, 198, 255, 0.2);
 }
 
 .services-header-section {
@@ -1667,29 +1707,8 @@ body[data-theme='light'] .service-modern-item:hover {
   transform: scaleX(1);
 }
 
-/* Services Description Text */
-.services-description-container {
-  padding: 0 1rem;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 150px; /* Ensure some height */
-}
+/* Removed old services description text styles */
 
-.services-description-text {
-  font-size: 1.15rem;
-  line-height: 1.8;
-  color: var(--text-color);
-  opacity: 0.95;
-  margin: 0;
-  max-width: 90%;
-}
-
-.services-card .services-description-text strong {
-  color: #0abcee; /* Match the services card blue accent */
-  font-weight: 700;
-}
 
 /* Tech Stack Card Redesign */
 .tech-stack-card {
@@ -1853,43 +1872,37 @@ body[data-theme='light'] .tech-item:hover {
 
 /* Projects Card Redesign */
 .projects-card {
+  /* Inherits .card-main styles, aligned with values-card */
   position: relative;
-  overflow: visible;
-  padding: 3.5rem 2rem; /* Increased padding like profile card */
-  border-radius: 30px;
+  overflow: hidden;
+  padding: 2.5rem;
+  border-radius: 20px;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
   z-index: 1;
   background: transparent;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Un-center header */
-  text-align: left; /* Un-center header */
-  gap: 2rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .projects-card::before {
   content: "";
   position: absolute;
-  inset: -3px; /* Thickness of the border */
-  border-radius: 32px; /* Slightly larger than card */
+  inset: -3px;
+  border-radius: 22px;
   background: linear-gradient(45deg, 
-    var(--accent-color), 
-    #ff9a9e, 
-    #fad0c4, 
-    var(--accent-color)
+    #BF953F, /* Gold */
+    #FCF6BA, /* Cream */
+    #BF953F
   );
   background-size: 300% 300%;
   z-index: -2;
   animation: gradientBorder 8s ease infinite;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .projects-card::after {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 30px;
+  border-radius: 20px;
   background: rgba(15, 23, 42, 0.85); /* Deep dark blue-ish grey */
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -1903,22 +1916,20 @@ body[data-theme='light'] .projects-card::after {
 
 .projects-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 30px 60px rgba(var(--accent-color-rgb), 0.3); /* Glowy shadow */
+  box-shadow: 0 20px 40px rgba(225, 197, 100, 0.3); /* Cream Gold glow */
 }
 
 .projects-header-section {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Un-center header */
   gap: 1.2rem;
-  margin-bottom: 0; /* Removed margin as parent gap handles spacing */
+  margin-bottom: 1.5rem;
   position: relative;
   z-index: 1;
-  width: 100%; /* Ensure it takes full width for left alignment */
 }
 
 .projects-icon-wrapper {
-  background: rgba(255, 255, 255, 0.05); /* Match profile card social links */
+  background: linear-gradient(45deg, #BF953F, #FCF6BA);
   padding: 1rem;
   border-radius: 50%;
   display: flex;
@@ -1931,8 +1942,8 @@ body[data-theme='light'] .projects-card::after {
 
 .projects-card:hover .projects-icon-wrapper {
   transform: scale(1.15) rotate(15deg);
-  border-color: var(--accent-color); /* Use accent color for border on hover */
-  box-shadow: 0 8px 20px rgba(var(--accent-color-rgb), 0.4);
+  border-color: #BF953F;
+  box-shadow: 0 8px 20px rgba(225, 197, 100, 0.4);
 }
 
 .projects-main-icon {
@@ -1946,33 +1957,20 @@ body[data-theme='light'] .projects-card::after {
   letter-spacing: 1px;
   margin: 0;
   line-height: 1.2;
-  background: linear-gradient(135deg, var(--text-color) 30%, var(--accent-color) 100%); /* Match profile card h2 gradient */
+  background: linear-gradient(135deg, var(--text-color) 40%, #B38728 100%); /* Darker gold for better contrast */
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 body[data-theme='light'] .projects-icon-wrapper {
-  background: rgba(0, 0, 0, 0.05);
-  border-color: rgba(0, 0, 0, 0.05);
+  background: linear-gradient(45deg, #FCF6BA, #E1C564);
+  border-color: rgba(0, 0, 0, 0.2);
 }
 
+/* Utility to reset display if needed, though generic class handles it */
 .projects-grid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  z-index: 1;
-}
-
-.projects-grid p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  font-style: italic;
-  color: var(--text-color);
-  opacity: 0.8;
-  max-width: 80%;
-  margin: 0;
+  display: block;
 }
 
 /* Removed old project-item styles as they are no longer used */
