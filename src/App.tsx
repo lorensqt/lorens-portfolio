@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FcShop, FcMoneyTransfer, FcPuzzle, FcGlobe, FcCalendar, FcBriefcase, FcLike, FcCommandLine, FcApproval, FcSettings, FcCollaboration, FcFlashOn, FcCellPhone } from "react-icons/fc";
-import { FaFacebookF, FaFacebookMessenger, FaDownload, FaPhone } from "react-icons/fa";
+import { FaFacebookF, FaFacebookMessenger, FaDownload, FaPhone, FaUser, FaTimes } from "react-icons/fa";
 import { SiGmail, SiCisco, SiNginx, SiLinux } from "react-icons/si";
 import Notification from './components/Notification';
 import './App.css';
@@ -329,7 +329,7 @@ function App() {
       </main>
 
       <button className="bio-toggle" onClick={toggleBio} aria-label="Toggle Bio">
-        <i className={`fas ${isBioVisible ? 'fa-times' : 'fa-user'}`}></i>
+        {isBioVisible ? <FaTimes size={24} /> : <FaUser size={24} />}
         <span className="tooltip-text">{isBioVisible ? 'Hide Bio' : 'Show Bio'}</span>
       </button>
 
@@ -346,7 +346,7 @@ function App() {
           <div className="footer-brand">
             <h4>LORENS</h4>
             <p>© 2025 John Laurence Castillo</p>
-            <p className="footer-tagline">Building digital experiences.</p>
+            <p className="footer-tagline">Work smarter not harder.</p>
             <p className="footer-react-note">This page is made with React</p>
           </div>
         </div>
