@@ -6,7 +6,7 @@ import Notification from './components/Notification';
 import './App.css';
 
 function App() {
-  const [theme] = useState('light');
+  const [theme] = useState('dark');
   const [isBioVisible, setIsBioVisible] = useState(false);
   const [notification, setNotification] = useState<{
     message: string;
@@ -78,9 +78,9 @@ function App() {
 
       <header id="home" className="hero">
         <div className="hero-content">
-          <h1 className="hero-title">Creative & Professional Web Solutions</h1>
-          <p className="hero-subtitle">Building dynamic, responsive, and beautiful web applications.</p>
-          <a href="#profile-card" className="cta-button hero-button">LETS WORK TOGETHER</a>
+          <h1 className="hero-title">Crafting Digital Landscapes</h1>
+          <p className="hero-subtitle">Rooted in clean code. Growing beautiful user experiences.</p>
+          <a href="#profile-card" className="cta-button hero-button">START A PROJECT</a>
         </div>
       </header>
 
@@ -92,7 +92,7 @@ function App() {
                 <div className="values-icon-wrapper">
                   <FcApproval className="values-main-icon" />
                 </div>
-                <h3>Core Values</h3>
+                <h3>Our Roots</h3>
               </div>
               <div className="values-grid">
                 <div className="value-item">
@@ -225,6 +225,39 @@ function App() {
                 </div>
               </div>
             </div>
+
+            {/* Certifications Section */}
+            <div className="card-main certifications-card full-width" id="certifications">
+              <div className="certifications-header-section">
+                <div className="certifications-icon-wrapper">
+                  <FcApproval className="certifications-main-icon" />
+                </div>
+                <h3>Certifications</h3>
+              </div>
+              <div className="cert-grid">
+                <div className="cert-item">
+                  <img src={`${import.meta.env.BASE_URL}itil4_logo.png`} alt="ITIL 4 Foundation Logo" className="cert-logo" />
+                  <h4>ITIL® 4 Foundation</h4>
+                  <a href="https://www.peoplecert.org/public-profile?ed=XCHu3ZqUTNJklg4ya17Nbvle9y7W6quw" className="cert-link" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </div>
+                <div className="cert-item">
+                  <img src={`${import.meta.env.BASE_URL}project+_logo.png`} alt="CompTIA Project+ Logo" className="cert-logo" />
+                  <h4>CompTIA Project+</h4>
+                  <a href="https://www.credly.com/badges/27eab92d-8f53-402f-8d39-e3d7b2985353" className="cert-link" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </div>
+                <div className="cert-item">
+                  <img src={`${import.meta.env.BASE_URL}network+_logo.png`} alt="CompTIA Network+ Logo" className="cert-logo" />
+                  <h4>CompTIA Network+</h4>
+                  <a href="https://www.credly.com/badges/b736f50b-6b49-4614-b1ce-2f79e6d46306/public_url" className="cert-link" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </div>
+                <div className="cert-item">
+                  <img src={`${import.meta.env.BASE_URL}jse_logo.png`} alt="JSE-40-01 Logo" className="cert-logo" />
+                  <h4>[JSE-40-01] JSE – Certified Entry-Level JavaScript Programmer</h4>
+                  <a href="https://www.credly.com/badges/ab731f07-1553-4bbb-bb2b-4a9c713094fa/public_url" className="cert-link" target="_blank" rel="noopener noreferrer">View Certificate</a>
+                </div>
+              </div>
+            </div>
+
             <div className="card-main projects-card full-width" id="projects">
               <div className="projects-header-section">
                 <div className="projects-icon-wrapper">
@@ -286,7 +319,7 @@ function App() {
                 <a href="#" onClick={(e) => { e.preventDefault(); handlePhoneClick('09942617194'); }} aria-label="Phone" className="social-btn phone"><FaPhone /></a>
               </div>
 
-              <a href="/lorens_resume.pdf" download="lorens_resume.pdf" className="download-cv-btn">
+              <a href={`${import.meta.env.BASE_URL}lorens_resume.pdf`} download="lorens_resume.pdf" className="download-cv-btn">
                 <FaDownload />
                 <span>Download CV</span>
               </a>
@@ -301,7 +334,7 @@ function App() {
       </button>
 
       <aside className={`bio-section ${isBioVisible ? 'visible' : ''}`}>
-        <img src="/nobgprofile.png" className="bio-image" alt="John Laurence Castillo" />
+        <img src={`${import.meta.env.BASE_URL}nobgprofile.png`} className="bio-image" alt="John Laurence Castillo" />
         <div className="bio-content">
           <h4>Hi, I'm LORENS</h4>
           <p>I craft compelling web and mobile experiences. Let's build something amazing together.</p>
