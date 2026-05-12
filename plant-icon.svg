@@ -1,0 +1,15 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <!-- Pot Rim (Shadowed Wood) -->
+  <rect x="88" y="200" width="80" height="16" rx="6" fill="#b08968"/>
+  <!-- Pot Base (Golden Wood) -->
+  <path d="M96 216 L 104 256 H 152 L 160 216 Z" fill="#d4a373"/>
+  
+  <!-- Stem -->
+  <path d="M128 200 V 80" stroke="#1b4332" stroke-width="16" stroke-linecap="round" fill="none"/>
+  
+  <!-- Left Leaf (Forest Green) -->
+  <path d="M128 160 C 56 160, 40 70, 40 70 C 88 70, 128 110, 128 160 Z" fill="#2d6a4f"/>
+  
+  <!-- Right Leaf (Moss Green - Lighter) -->
+  <path d="M128 110 C 200 110, 216 20, 216 20 C 168 20, 128 60, 128 110 Z" fill="#95d5b2"/>
+</svg>
