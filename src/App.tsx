@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FcShop, FcMoneyTransfer, FcPuzzle, FcGlobe, FcCalendar, FcBriefcase, FcLike, FcCommandLine, FcApproval, FcSettings, FcCollaboration, FcFlashOn, FcCellPhone } from "react-icons/fc";
+import { FcShop, FcMoneyTransfer, FcPuzzle, FcGlobe, FcCalendar, FcBriefcase, FcLike, FcCommandLine, FcApproval, FcSettings, FcCollaboration, FcFlashOn, FcCellPhone, FcSearch, FcPrivacy, FcElectronics, FcDatabase, FcComboChart, FcStatistics, FcCalculator, FcClock } from "react-icons/fc";
 import { FaFacebookF, FaFacebookMessenger, FaDownload, FaPhone, FaUser, FaTimes } from "react-icons/fa";
 import { SiGmail, SiCisco, SiNginx, SiLinux } from "react-icons/si";
 import Notification from './components/Notification';
@@ -87,75 +87,100 @@ function App() {
       <main id="main-content" className="main-grid-container">
         <div className="left-column">
           <div className="card-grid-main">
-            <div className="card-main values-card" id="values">
-              <div className="values-header-section">
-                <div className="values-icon-wrapper">
-                  <FcApproval className="values-main-icon" />
-                </div>
-                <h3>Our Roots</h3>
-              </div>
-              <div className="values-grid">
-                <div className="value-item">
-                  <FcFlashOn size={35} />
-                  <div className="value-text">
-                    <h4>High Performance</h4>
-                    <p>Optimized for speed and efficiency.</p>
+            <div className="card-main combined-services-card full-width" id="services">
+              <div className="combined-services-layout">
+                {/* Standards Column */}
+                <div className="standards-section">
+                  <div className="values-header-section">
+                    <div className="values-icon-wrapper">
+                      <FcApproval className="values-main-icon" />
+                    </div>
+                    <h3>The Lorens Standard</h3>
+                  </div>
+                  <div className="values-grid">
+                    <div className="value-item">
+                      <FcFlashOn size={35} />
+                      <div className="value-text">
+                        <h4>Performance Obsessed</h4>
+                        <p>Lightning-fast load times designed for better SEO and conversion.</p>
+                      </div>
+                    </div>
+                    <div className="value-item">
+                      <FcCellPhone size={35} />
+                      <div className="value-text">
+                        <h4>Mobile-First Design</h4>
+                        <p>Flawless experiences across all devices, guaranteed.</p>
+                      </div>
+                    </div>
+                    <div className="value-item">
+                      <FcSettings size={35} />
+                      <div className="value-text">
+                        <h4>Clean Architecture</h4>
+                        <p>Future-proof code foundations that scale effortlessly.</p>
+                      </div>
+                    </div>
+                    <div className="value-item">
+                      <FcCollaboration size={35} />
+                      <div className="value-text">
+                        <h4>Intuitive UX/UI</h4>
+                        <p>Interfaces crafted to turn visitors into loyal users.</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div className="value-item">
-                  <FcCellPhone size={35} />
-                  <div className="value-text">
-                    <h4>Responsive</h4>
-                    <p>Perfect on mobile, tablet, and desktop.</p>
+
+                {/* Solutions Column */}
+                <div className="solutions-section">
+                  <div className="services-header-section">
+                    <div className="services-icon-wrapper">
+                       <FcBriefcase className="services-main-icon" />
+                    </div>
+                    <h3>Specialized Solutions</h3>
                   </div>
-                </div>
-                <div className="value-item">
-                  <FcSettings size={35} />
-                  <div className="value-text">
-                    <h4>Scalable Code</h4>
-                    <p>Clean architecture ready for growth.</p>
+                  <div className="services-detailed-grid">
+                    <div className="service-detailed-item">
+                      <div className="service-icon-box"><FcShop size={30} /></div>
+                      <div className="service-content">
+                        <h4>E-Commerce Platforms</h4>
+                        <p>Secure shops built to drive your digital sales.</p>
+                      </div>
+                    </div>
+                    <div className="service-detailed-item">
+                      <div className="service-icon-box"><FcDatabase size={30} /></div>
+                      <div className="service-content">
+                        <h4>Enterprise Solutions</h4>
+                        <p>Custom tools to streamline your operations.</p>
+                      </div>
+                    </div>
+                    <div className="service-detailed-item">
+                      <div className="service-icon-box"><FcPuzzle size={30} /></div>
+                      <div className="service-content">
+                        <h4>Business Automation</h4>
+                        <p>Smart workflows to save you time and overhead.</p>
+                      </div>
+                    </div>
+                    <div className="service-detailed-item">
+                      <div className="service-icon-box"><FcCellPhone size={30} /></div>
+                      <div className="service-content">
+                        <h4>Cross-Platform Apps</h4>
+                        <p>Native-feel apps built with React Native.</p>
+                      </div>
+                    </div>
+                    <div className="service-detailed-item">
+                      <div className="service-icon-box"><FcGlobe size={30} /></div>
+                      <div className="service-content">
+                        <h4>High-Impact Web</h4>
+                        <p>Stunning sites tailored to your unique story.</p>
+                      </div>
+                    </div>
+                    <div className="service-detailed-item">
+                      <div className="service-icon-box"><FcSettings size={30} /></div>
+                      <div className="service-content">
+                        <h4>Bespoke Software</h4>
+                        <p>Tailored apps for specific business requirements.</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="value-item">
-                  <FcCollaboration size={35} />
-                  <div className="value-text">
-                    <h4>User-Centric</h4>
-                    <p>Designed with the end-user in mind.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="card-main services-card" id="services">
-              <div className="services-header-section">
-                <div className="services-icon-wrapper">
-                   <FcBriefcase className="services-main-icon" />
-                </div>
-                <h3>What I Offer</h3>
-              </div>
-              <div className="services-modern-grid">
-                <div className="service-modern-item">
-                  <div className="icon-box"><FcShop size={40} /></div>
-                  <span>E-commerce</span>
-                </div>
-                <div className="service-modern-item">
-                  <div className="icon-box"><FcMoneyTransfer size={40} /></div>
-                  <span>Sinking Fund</span>
-                </div>
-                <div className="service-modern-item">
-                  <div className="icon-box"><FcPuzzle size={40} /></div>
-                  <span>Automations</span>
-                </div>
-                <div className="service-modern-item">
-                  <div className="icon-box"><FcGlobe size={40} /></div>
-                  <span>Public Websites</span>
-                </div>
-                <div className="service-modern-item">
-                  <div className="icon-box"><FcCalendar size={40} /></div>
-                  <span>Reservations</span>
-                </div>
-                <div className="service-modern-item">
-                  <div className="icon-box"><FcLike size={40} /></div>
-                  <span>Wedding Websites</span>
                 </div>
               </div>
             </div>
@@ -210,6 +235,14 @@ function App() {
                 <div className="tech-item">
                   <i className="devicon-googlecloud-plain colored"></i>
                   <span>GCP</span>
+                </div>
+                <div className="tech-item">
+                  <i className="devicon-dotnetcore-plain colored"></i>
+                  <span>.NET</span>
+                </div>
+                <div className="tech-item">
+                  <i className="devicon-react-original colored"></i>
+                  <span>React Native</span>
                 </div>
                 <div className="tech-item">
                   <SiLinux size={45} color="#FCC624" />
@@ -267,22 +300,52 @@ function App() {
               </div>
               <div className="projects-grid">
                 <div className="project-item">
-                  <FcApproval size={40} />
-                  <h4>E-commerce Platform</h4>
-                  <p>Developed a full-stack e-commerce solution with secure payment gateway integration and inventory management.</p>
-                  <a href="#" className="project-link">View Project</a>
+                  <span className="project-badge">Internal</span>
+                  <FcMoneyTransfer size={40} />
+                  <h4>Sinking Fund Systems</h4>
+                  <p>Comprehensive financial tools for managing and tracking sinking funds to ensure long-term stability.</p>
                 </div>
                 <div className="project-item">
-                  <FcSettings size={40} />
-                  <h4>CRM System</h4>
-                  <p>Built a custom Customer Relationship Management system to streamline client interactions and sales processes.</p>
-                  <a href="#" className="project-link">View Project</a>
+                  <span className="project-badge">Internal</span>
+                  <FcComboChart size={40} />
+                  <h4>Project Monitoring</h4>
+                  <p>Advanced tracking system for projects and progress with real-time insights and status reporting.</p>
                 </div>
                 <div className="project-item">
-                  <FcCollaboration size={40} />
-                  <h4>Real-time Chat Application</h4>
-                  <p>Created a real-time chat application using WebSockets, supporting direct messages and group chats.</p>
-                  <a href="#" className="project-link">View Project</a>
+                  <span className="project-badge">Internal</span>
+                  <FcElectronics size={40} />
+                  <h4>Infra Healthchecker</h4>
+                  <p>A custom .NET application deployed across servers to monitor and deliver server health data via API.</p>
+                </div>
+                <div className="project-item">
+                  <span className="project-badge">Internal</span>
+                  <FcPrivacy size={40} />
+                  <h4>Secret Vaults System</h4>
+                  <p>A secure platform for storing sensitive credentials and information with robust encryption protocols.</p>
+                </div>
+                <div className="project-item">
+                  <span className="project-badge">Internal</span>
+                  <FcDatabase size={40} />
+                  <h4>Inventory Systems</h4>
+                  <p>Efficient management systems for tracking stock levels, orders, and logistics for various businesses.</p>
+                </div>
+                <div className="project-item">
+                  <span className="project-badge">Internal</span>
+                  <FcGlobe size={40} />
+                  <h4>Cloud Monitoring</h4>
+                  <p>Real-time monitoring of cloud instances, providing details on health, performance, and cost optimization.</p>
+                </div>
+                <div className="project-item">
+                  <span className="project-badge">Internal</span>
+                  <FcClock size={40} />
+                  <h4>MyDUTY</h4>
+                  <p>An alert and incident response system with escalation policies, similar to PagerDuty.</p>
+                </div>
+                <div className="project-item">
+                  <span className="project-badge">Internal</span>
+                  <FcCalculator size={40} />
+                  <h4>Salary & Expense Tracker</h4>
+                  <p>A mobile application developed with React Native for personal finance management and expense tracking.</p>
                 </div>
               </div>
             </div>
@@ -302,7 +365,7 @@ function App() {
 
               <div className="profile-stats">
                 <div className="stat-item">
-                  <span className="stat-value">2+</span>
+                  <span className="stat-value">3+</span>
                   <span className="stat-label">Years Exp.</span>
                 </div>
                 <div className="stat-divider"></div>
