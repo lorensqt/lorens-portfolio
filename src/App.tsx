@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FcShop, FcMoneyTransfer, FcPuzzle, FcGlobe, FcCalendar, FcBriefcase, FcLike, FcCommandLine, FcApproval, FcSettings, FcCollaboration, FcFlashOn, FcCellPhone, FcSearch, FcPrivacy, FcElectronics, FcDatabase, FcComboChart, FcStatistics, FcCalculator, FcClock } from "react-icons/fc";
+import { FcShop, FcMoneyTransfer, FcPuzzle, FcGlobe, FcBriefcase, FcCommandLine, FcApproval, FcSettings, FcCollaboration, FcFlashOn, FcCellPhone, FcPrivacy, FcElectronics, FcDatabase, FcComboChart, FcCalculator, FcClock } from "react-icons/fc";
 import { FaFacebookF, FaFacebookMessenger, FaDownload, FaPhone, FaUser, FaTimes } from "react-icons/fa";
 import { SiGmail, SiCisco, SiNginx, SiLinux } from "react-icons/si";
 import Notification from './components/Notification';
