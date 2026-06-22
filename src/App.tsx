@@ -356,7 +356,7 @@ function App() {
             <div className="profile-card-glass" id="profile-card">
               <div className="profile-header">
                 <h2>John Laurence Castillo</h2>
-                <span className="profile-tagline">Full Stack Developer</span>
+                <span className="profile-tagline">Software Engineer</span>
                 <div className="status-indicator-wrapper">
                    <span className="status-dot pulse"></span>
                    <span className="status-text">Freelance Only</span>
