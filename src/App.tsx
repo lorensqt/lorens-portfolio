@@ -1,12 +1,18 @@
 import { useState, useEffect } from 'react';
 import { FcShop, FcMoneyTransfer, FcPuzzle, FcGlobe, FcBriefcase, FcCommandLine, FcApproval, FcSettings, FcCollaboration, FcFlashOn, FcCellPhone, FcPrivacy, FcElectronics, FcDatabase, FcComboChart, FcCalculator, FcClock } from "react-icons/fc";
-import { FaFacebookF, FaFacebookMessenger, FaDownload, FaPhone, FaUser, FaTimes } from "react-icons/fa";
+import { FaFacebookF, FaFacebookMessenger, FaDownload, FaPhone, FaUser, FaTimes, FaSun, FaMoon } from "react-icons/fa";
 import { SiGmail, SiCisco, SiNginx, SiLinux } from "react-icons/si";
 import Notification from './components/Notification';
-import './App.css';
+import './styles/variables.css';
+import './styles/hero.css';
+import './styles/grid.css';
+import './styles/profile.css';
+import './styles/cards.css';
 
 function App() {
-  const [theme] = useState('dark');
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('theme') || 'dark';
+  });
   const [isBioVisible, setIsBioVisible] = useState(false);
   const [notification, setNotification] = useState<{
     message: string;
@@ -14,6 +20,12 @@ function App() {
     link?: string;
     onConfirm?: () => void;
   } | null>(null);
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+  };
 
   const toggleBio = () => {
     setIsBioVisible(!isBioVisible);
@@ -382,7 +394,12 @@ function App() {
                 <a href="#" onClick={(e) => { e.preventDefault(); handlePhoneClick('09942617194'); }} aria-label="Phone" className="social-btn phone"><FaPhone /></a>
               </div>
 
-              <a href={`${import.meta.env.BASE_URL}lorens_resume.pdf`} download="lorens_resume.pdf" className="download-cv-btn">
+              <a 
+                href={`${import.meta.env.BASE_URL}lorens_resume.pdf`} 
+                download="lorens_resume.pdf" 
+                className="download-cv-btn"
+                aria-label="Download John Laurence Castillo's Resume PDF"
+              >
                 <FaDownload />
                 <span>Download CV</span>
               </a>
@@ -390,6 +407,15 @@ function App() {
           </div>
         </div>
       </main>
+
+      <button 
+        className="theme-toggle-btn" 
+        onClick={toggleTheme} 
+        aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+      >
+        {theme === 'dark' ? <FaSun size={24} /> : <FaMoon size={24} />}
+        <span className="tooltip-text">{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
+      </button>
 
       <button className="bio-toggle" onClick={toggleBio} aria-label="Toggle Bio">
         {isBioVisible ? <FaTimes size={24} /> : <FaUser size={24} />}

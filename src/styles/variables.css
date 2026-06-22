@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --bg-color-dark: #081c15; /* Black Forest */
+  --primary-color-dark: #1b4332; /* Deep Green */
+  --secondary-color-dark: #2d6a4f; /* Forest Green */
+  --text-color-dark: #faedcd; /* Cream/Parchment */
+  --accent-color: #d4a373; /* Golden Wood */
+  --accent-color-rgb: 212, 163, 115;
+  --border-color-dark: #40916c;
+
+  --bg-color-light: #f8f9fa;
+  --primary-color-light: #ffffff;
+  --secondary-color-light: #e9ecef;
+  --text-color-light: #1b4332;
+  --border-color-light: #d8e2dc;
+}
+
+body[data-theme='dark'] {
+  --bg-color: var(--bg-color-dark);
+  --primary-color: var(--primary-color-dark);
+  --secondary-color: var(--secondary-color-dark);
+  --text-color: var(--text-color-dark);
+  --border-color: var(--border-color-dark);
+}
+
+body[data-theme='light'] {
+  --bg-color: var(--bg-color-light);
+  --primary-color: var(--primary-color-light);
+  --secondary-color: var(--secondary-color-light);
+  --text-color: var(--text-color-light);
+  --border-color: var(--border-color-light);
+}
+
+.App {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Lora', serif;
+}
+
